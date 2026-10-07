@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div ref="{{ setRoot }}">
+  <header style="background:rgba(10,19,20,0.82); backdrop-filter:blur(12px); border-bottom:1px solid var(--border);">
+    <div style="max-width:var(--container-wide); margin:0 auto; padding:0.7rem clamp(1rem,4vw,2rem); display:flex; align-items:center; gap:1.2rem;">
+      <a href="RobinPG-Home.dc.html" style="display:flex; align-items:center; gap:0.65rem; text-decoration:none;">
+        <img src="assets/logo_RPG.png" alt="RobinPG" style="width:32px; height:32px; object-fit:contain;">
+        <span style="font-family:var(--font-display); font-size:20px; color:var(--text-strong); white-space:nowrap;">RobinPictureGraphic</span>
+      </a>
+      <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ toggleMenu }}" aria-label="Menu" style="margin-left:auto; flex:none; width:44px; height:44px; display:flex; align-items:center; justify-content:center; background:transparent; border:1px solid var(--border); border-radius:var(--radius-md); color:var(--text-strong); font-size:20px; cursor:pointer;">{{ menuIcon }}</button>
+      </sc-if>
+      <sc-if value="{{ showDesktopProduct }}" hint-placeholder-val="{{ true }}">
+        <span style="padding-left:1rem; border-left:1px solid var(--border); font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.08em; font-size:20px; white-space:nowrap; color:var(--accent);">{{ productName }}</span>
+      </sc-if>
+
+      <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+      <nav style="margin-left:auto; display:flex; align-items:center; gap:1.1rem; flex-wrap:nowrap;">
+        <a href="RobinPG-Home.dc.html" style="{{ tabHomeStyle }}">Home</a>
+        <a href="RobinPG-FAQs.dc.html" style="{{ tabFaqStyle }}">FAQs</a>
+        <sc-if value="{{ showProductChrome }}" hint-placeholder-val="{{ true }}">
+          <a href="{{ detailHref }}" style="{{ tabDetailStyle }}">Detail</a>
+        </sc-if>
+        <sc-if value="{{ showBlueprintTab }}" hint-placeholder-val="{{ false }}">
+          <a href="{{ blueprintHref }}" style="{{ tabBlueprintStyle }}">Guide</a>
+        </sc-if>
+        <sc-if value="{{ showSwordFaq }}" hint-placeholder-val="{{ false }}">
+          <a href="Sword-Combat-Guide.dc.html" style="{{ tabSwordFaqStyle }}">Guide</a>
+        </sc-if>
+
+        <div style="position:relative;">
+          <button onClick="{{ toggle }}" style="display:flex; align-items:center; gap:0.5rem; font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.12em; font-size:15px; color:var(--text-soft); background:transparent; border:1px solid var(--border); border-radius:var(--radius-md); padding:0.5rem 0.85rem; cursor:pointer; transition:border-color .2s;" style-hover="border-color:var(--text-soft)">Products <span style="font-size:9px; color:var(--accent);">{{ caret }}</span></button>
+          <sc-if value="{{ open }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute; top:calc(100% + 0.55rem); right:0; width:310px; background:var(--ink-800); border:1px solid var(--border); border-radius:var(--radius-md); box-shadow:var(--shadow-lg); overflow:hidden; z-index:50;">
+              <div style="padding:0.7rem 1rem 0.45rem; font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.08em; font-size:18px; color:#39CCCE; border-bottom:1px solid var(--border);">Basic Movement Female · On sale</div>
+              <a href="Basic-Movement-Detail.dc.html" style="{{ itemBd }}" style-hover="background:var(--surface-hover)"><span>Detail</span><span style="color:var(--accent);">→</span></a>
+              <a href="Basic-Movement-Guide.dc.html" style="{{ itemBb }}" style-hover="background:var(--surface-hover)"><span>Setup &amp; Guide</span><span style="color:var(--accent);">→</span></a>
+              <a href="Animation-List.dc.html#basic" style="{{ itemBl }}" style-hover="background:var(--surface-hover)"><span>Animation Lists</span><span style="color:var(--accent);">→</span></a>
+              <div style="padding:0.7rem 1rem 0.45rem; font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.08em; font-size:18px; color:#F2A93F; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">Sword Combat · New</div>
+              <a href="Sword-Combat-Detail.dc.html" style="{{ itemSd }}" style-hover="background:var(--surface-hover)"><span>Detail</span><span style="color:var(--accent);">→</span></a>
+              <a href="Sword-Combat-Guide.dc.html" style="{{ itemSf }}" style-hover="background:var(--surface-hover)"><span>Setup & Guide</span><span style="color:var(--accent);">→</span></a>
+              <a href="Animation-List.dc.html#sword" style="{{ itemSl }}" style-hover="background:var(--surface-hover)"><span>Animation Lists</span><span style="color:var(--accent);">→</span></a>
+            </div>
+          </sc-if>
+        </div>
+
+        <x-import component-from-global-scope="RobinPGDesignSystem_edc0b1.Button" size="sm" on-click="{{ onBuy }}" style="flex:none;" hint-size="auto,34px"><span style="white-space:nowrap; display:inline-block;">Buy on FAB</span></x-import>
+      </nav>
+      </sc-if>
+    </div>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="border-top:1px solid var(--border); background:var(--ink-800); padding:0.5rem 0 1rem; max-height:calc(100vh - 61px); overflow:auto;">
+        <a href="RobinPG-Home.dc.html" style="{{ mItemHome }}">Home</a>
+        <a href="RobinPG-FAQs.dc.html" style="{{ mItemFaq }}">FAQs</a>
+        <div style="padding:0.9rem 1.25rem 0.35rem; font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.08em; font-size:16px; color:#39CCCE;">Basic Movement Female · On sale</div>
+        <a href="Basic-Movement-Detail.dc.html" style="{{ mItemBd }}">Detail</a>
+        <a href="Basic-Movement-Guide.dc.html" style="{{ mItemBb }}">Setup &amp; Guide</a>
+        <a href="Animation-List.dc.html#basic" style="{{ mItemBl }}">Animation Lists</a>
+        <div style="padding:0.9rem 1.25rem 0.35rem; font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.08em; font-size:16px; color:#F2A93F;">Sword Combat · New</div>
+        <a href="Sword-Combat-Detail.dc.html" style="{{ mItemSd }}">Detail</a>
+        <a href="Sword-Combat-Guide.dc.html" style="{{ mItemSf }}">Setup &amp; Guide</a>
+        <a href="Animation-List.dc.html#sword" style="{{ mItemSl }}">Animation Lists</a>
+        <div style="padding:1rem 1.25rem 0;">
+          <x-import component-from-global-scope="RobinPGDesignSystem_edc0b1.Button" size="md" on-click="{{ onBuy }}" style="width:100%;" hint-size="100%,40px"><span style="white-space:nowrap; display:inline-block;">Buy on FAB</span></x-import>
+        </div>
+      </div>
+    </sc-if>
+  </header>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:61},&quot;current&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;basic-detail&quot;,&quot;basic-blueprint&quot;,&quot;sword-detail&quot;,&quot;sword-blueprint&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { open: false, menuOpen: false, w: window.innerWidth };
+
+  componentDidMount() {
+    this._onResize = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this._onResize);
+    this._onDoc = (e) => {
+      if (!this.state.open) return;
+      if (this._root && !this._root.contains(e.target)) this.setState({ open: false });
+    };
+    document.addEventListener('mousedown', this._onDoc);
+  }
+  componentWillUnmount() { document.removeEventListener('mousedown', this._onDoc); window.removeEventListener('resize', this._onResize); }
+
+  renderVals() {
+    const cur = this.props.current || 'basic-detail';
+    const isHome = cur === 'home';
+    const isBasic = cur.indexOf('basic') === 0;
+
+    const tab = (active) => ({
+      fontFamily: 'var(--font-condensed)', textTransform: 'uppercase', letterSpacing: '0.12em',
+      fontSize: '15px', textDecoration: 'none', paddingBottom: '3px', whiteSpace: 'nowrap',
+      color: active ? 'var(--accent)' : 'var(--text-soft)',
+      borderBottom: active ? '2px solid var(--accent)' : '2px solid transparent',
+      transition: 'color .2s',
+    });
+
+    const item = (active) => ({
+      display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+      padding: '0.8rem 1rem', textDecoration: 'none',
+      fontFamily: 'var(--font-serif)', fontSize: '15px',
+      color: active ? 'var(--text-strong)' : 'var(--text-soft)',
+      background: active ? 'var(--surface-hover)' : 'transparent',
+      borderLeft: active ? '2px solid var(--accent)' : '2px solid transparent',
+      transition: 'background .2s',
+    });
+
+    const mobile = this.state.w < 900;
+    const mItem = (active) => ({
+      display: 'flex', alignItems: 'center', minHeight: '44px', padding: '0 1.25rem', textDecoration: 'none',
+      fontFamily: 'var(--font-serif)', fontSize: '17px',
+      color: active ? 'var(--accent)' : 'var(--text-soft)',
+      borderLeft: active ? '2px solid var(--accent)' : '2px solid transparent',
+    });
+    return {
+      mobile, desktop: !mobile,
+      showDesktopProduct: !mobile && !isHome && cur !== 'faqs',
+      menuOpen: mobile && this.state.menuOpen,
+      menuIcon: this.state.menuOpen ? '✕' : '☰',
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen })),
+      mItemHome: mItem(isHome), mItemFaq: mItem(cur === 'faqs'),
+      mItemBd: mItem(cur === 'basic-detail'), mItemBb: mItem(cur === 'basic-blueprint'),
+      mItemSd: mItem(cur === 'sword-detail'), mItemSf: mItem(cur === 'sword-faq'),
+      mItemBl: mItem(cur === 'basic-list'), mItemSl: mItem(cur === 'sword-list'),
+      itemBl: item(cur === 'basic-list'), itemSl: item(cur === 'sword-list'),
+      setRoot: (el) => { this._root = el; },
+      open: this.state.open,
+      caret: this.state.open ? '▲' : '▼',
+      toggle: () => this.setState((s) => ({ open: !s.open })),
+      onBuy: () => window.open('https://www.fab.com', '_blank'),
+      showProductChrome: !isHome && cur !== 'faqs',
+      tabHomeStyle: tab(isHome),
+      tabFaqStyle: tab(cur === 'faqs'),
+      productName: isBasic ? 'Basic Movement Female' : 'Sword Combat',
+      detailHref: isBasic ? 'Basic-Movement-Detail.dc.html' : 'Sword-Combat-Detail.dc.html',
+      blueprintHref: 'Basic-Movement-Guide.dc.html',
+      showBlueprintTab: !isHome && cur !== 'faqs' && isBasic,
+      tabDetailStyle: tab(cur.indexOf('detail') !== -1),
+      tabBlueprintStyle: tab(cur.indexOf('blueprint') !== -1),
+      itemBd: item(cur === 'basic-detail'),
+      itemBb: item(cur === 'basic-blueprint'),
+      itemSd: item(cur === 'sword-detail'),
+      itemSf: item(cur === 'sword-faq'),
+      showSwordFaq: !isHome && !isBasic && cur !== 'faqs',
+      tabSwordFaqStyle: tab(cur === 'sword-faq'),
+    };
+  }
+}
+</script>
+</body>
+</html>

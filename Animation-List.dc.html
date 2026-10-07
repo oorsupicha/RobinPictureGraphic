@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/base.css">
+  <script src="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/_ds_bundle.js"></script>
+  <script src="animation-lists.js"></script>
+  <style>
+    body { margin: 0; background: var(--ink-900); color: var(--text); }
+    a { color: var(--accent); } a:hover { color: var(--accent-hover); }
+    [data-theme="ember"]{
+      --teal-300:#FBD9A0; --teal-400:#F6C272; --teal-500:#F2A93F;
+      --teal-600:#D98A26; --teal-700:#B8721F; --teal-800:#935B19; --teal-900:#6E4413;
+      --teal-veil:rgba(242,169,63,0.12); --teal-glow:rgba(242,169,63,0.20);
+      --accent:#F2A93F; --accent-hover:#F6C272; --accent-press:#D98A26;
+      --accent-quiet:rgba(242,169,63,0.10); --focus-ring:#F6C272; --border-strong:#B8721F;
+    }
+  </style>
+</helmet>
+<div data-theme="{{ theme }}" data-screen-label="Animation List" style="min-height:100vh; background:var(--ink-900);">
+  <dc-import name="SiteNav" current="{{ navCurrent }}" hint-size="100%,61px" style="position:sticky; top:0; z-index:100; display:block;"></dc-import>
+  <main style="max-width:860px; margin:0 auto; padding:2.5rem clamp(1.25rem,4vw,2rem) 4rem;">
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin-bottom:1.8rem;">
+      <a href="{{ backHref }}" style="font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.08em; font-size:15px; color:var(--text-soft); text-decoration:none;" style-hover="color:var(--accent)">← Back to detail</a>
+      <div style="display:flex; border:1px solid var(--border); border-radius:var(--radius-md); overflow:hidden;">
+        <button onClick="{{ showSword }}" style="{{ tabSword }}">Sword Combat</button>
+        <button onClick="{{ showBasic }}" style="{{ tabBasic }}">Basic Movement</button>
+      </div>
+    </div>
+    <h1 style="font-family:var(--font-display); font-weight:400; font-size:clamp(1.7rem,4vw,2.4rem); line-height:1.1; color:var(--text-strong); margin:0 0 1rem;">{{ title }}</h1>
+    <div style="font-family:var(--font-mono); font-size:14px; line-height:1.7; color:var(--text-soft); padding:1rem 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); margin-bottom:2rem;">
+      <sc-for list="{{ summary }}" as="s" hint-placeholder-count="2"><div>{{ s }}</div></sc-for>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:2rem; font-family:var(--font-mono); font-size:14px; line-height:1.7;">
+      <sc-for list="{{ groups }}" as="g" hint-placeholder-count="6">
+        <div>
+          <div style="display:flex; gap:0.8rem; align-items:baseline; color:var(--text-strong); margin-bottom:0.35rem;">
+            <span style="color:var(--accent); min-width:4.5ch;">{{ g.n }}</span>
+            <span>{{ g.name }}</span>
+          </div>
+          <div style="padding-left:calc(4.5ch + 0.8rem); color:var(--text-soft); overflow-wrap:anywhere;">
+            <sc-for list="{{ g.files }}" as="f" hint-placeholder-count="4"><div>{{ f }}</div></sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { pack: (location.hash || '').replace('#', '') === 'basic' ? 'basic' : 'sword', ready: !!window.RPG_ANIM_LISTS };
+  componentDidMount() {
+    this._hash = () => this.setState({ pack: location.hash === '#basic' ? 'basic' : 'sword' });
+    window.addEventListener('hashchange', this._hash);
+    if (!this.state.ready) {
+      this._t = setInterval(() => { if (window.RPG_ANIM_LISTS) { clearInterval(this._t); this.setState({ ready: true }); } }, 100);
+    }
+  }
+  componentWillUnmount() { window.removeEventListener('hashchange', this._hash); clearInterval(this._t); }
+  setPack(p) { history.replaceState(null, '', '#' + p); this.setState({ pack: p }); window.scrollTo(0, 0); }
+  renderVals() {
+    const pack = this.state.pack;
+    const data = (window.RPG_ANIM_LISTS || {})[pack] || { title: '', summary: [], groups: [] };
+    const tab = (on) => ({
+      fontFamily: 'var(--font-condensed)', textTransform: 'uppercase', letterSpacing: '0.08em', fontSize: '15px',
+      padding: '0.55rem 1rem', border: 'none', cursor: 'pointer', minHeight: '40px',
+      whiteSpace: 'nowrap', lineHeight: 1, flex: 'none',
+      background: on ? 'var(--accent-quiet)' : 'transparent', color: on ? 'var(--accent)' : 'var(--text-soft)',
+    });
+    const sword = pack === 'sword';
+    return {
+      theme: sword ? 'ember' : 'teal',
+      navCurrent: sword ? 'sword-list' : 'basic-list',
+      backHref: sword ? 'Sword-Combat-Detail.dc.html' : 'Basic-Movement-Detail.dc.html',
+      title: data.title, summary: data.summary, groups: data.groups,
+      tabSword: tab(sword), tabBasic: tab(!sword),
+      showSword: () => this.setPack('sword'), showBasic: () => this.setPack('basic'),
+    };
+  }
+}
+</script>
+</body>
+</html>

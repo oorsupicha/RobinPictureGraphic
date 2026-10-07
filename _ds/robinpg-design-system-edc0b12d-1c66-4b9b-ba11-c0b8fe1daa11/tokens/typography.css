@@ -1,0 +1,56 @@
+/* ──────────────────────────────────────────────────────────
+   RobinPG · Typography tokens
+   Display  : Coolvetica — wide, friendly, gamey. UPPERCASE for
+              labels/eyebrows; sentence case for big headlines.
+   Serif    : Vollkorn — warm humanist serif for all reading copy.
+   Mono     : system mono for engine paths, blueprint names, code.
+   ────────────────────────────────────────────────────────── */
+:root {
+  /* ── Families ── */
+  --font-display:    'Coolvetica', 'Arial Narrow', sans-serif;
+  --font-condensed:  'Coolvetica Condensed', 'Coolvetica', sans-serif;
+  --font-serif:      'Vollkorn', Georgia, 'Times New Roman', serif;
+  --font-body:       'Vollkorn', Georgia, serif;
+  --font-mono:       ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* ── Type scale (fluid-friendly rem, base 16px) ── */
+  --text-2xs:  0.6875rem;  /* 11px — micro labels */
+  --text-xs:   0.75rem;    /* 12px */
+  --text-sm:   0.875rem;   /* 14px */
+  --text-base: 1rem;       /* 16px — small print / captions */
+  --text-md:   1.125rem;   /* 18px — body default */
+  --text-lg:   1.375rem;   /* 22px — lead body */
+  --text-xl:   1.75rem;    /* 28px */
+  --text-2xl:  2.25rem;    /* 36px */
+  --text-3xl:  3rem;       /* 48px */
+  --text-4xl:  4rem;       /* 64px */
+  --text-5xl:  5.5rem;     /* 88px — poster */
+  --text-6xl:  7.5rem;     /* 120px — poster headline */
+
+  /* ── Weights ── */
+  --fw-display:   400;     /* @kind font */
+  --fw-regular:   400;     /* @kind font */
+  --fw-medium:    500;     /* @kind font */
+  --fw-semibold:  600;     /* @kind font */
+  --fw-bold:      700;     /* @kind font */
+  --fw-black:     900;     /* @kind font */
+
+  /* ── Line heights ── */
+  --leading-tight:  1.04;  /* display headlines */
+  --leading-snug:   1.2;   /* sub-heads */
+  --leading-normal: 1.5;   /* UI text */
+  --leading-relaxed:1.72;  /* long-form serif body */
+
+  /* ── Letter spacing ── */
+  --tracking-tight:  -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+  --tracking-label:  0.16em;  /* uppercase Coolvetica eyebrows */
+  --tracking-mega:   0.24em;  /* micro caps */
+
+  /* ── Semantic roles ── */
+  --role-hero-family:    var(--font-display);  /* Coolvetica Regular — headlines & topics (italic for emphasis) */
+  --role-display-family: var(--font-display);
+  --role-eyebrow-family: var(--font-condensed);
+  --role-body-family:    var(--font-serif);
+}

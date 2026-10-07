@@ -1,0 +1,73 @@
+/* ──────────────────────────────────────────────────────────
+   RobinPG · Base element styles & helpers
+   Imported by styles.css after tokens. Sets the default
+   dark "viewport" canvas, serif body, and a few primitives
+   the specimen cards & UI kits rely on.
+   ────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
+  font-weight: var(--fw-regular);
+}
+
+a { color: var(--accent); text-decoration: none; }
+img, svg { display: block; max-width: 100%; }
+
+::selection { background: var(--teal-500); color: var(--ink-950); }
+
+/* ── Display helpers ── */
+.ds-display {
+  font-family: var(--font-display);
+  font-weight: var(--fw-display);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+.ds-hero {
+  font-family: var(--font-display);
+  font-weight: var(--fw-display);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+}
+.ds-eyebrow {
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  font-size: var(--text-xs);
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.ds-eyebrow::after {
+  content: "";
+  width: 36px;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── Focus ── */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* ── Scrollbar (dark) ── */
+* { scrollbar-width: thin; scrollbar-color: var(--ink-600) transparent; }
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-thumb { background: var(--ink-600); border-radius: 999px; }
+*::-webkit-scrollbar-track { background: transparent; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}

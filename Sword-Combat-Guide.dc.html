@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/base.css">
+  <link rel="stylesheet" href="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/styles.css">
+  <script src="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/_ds_bundle.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--ink-900); color: var(--text); overflow-wrap: anywhere; }
+    /* Sword Combat → gold/ember theme: remap the teal scale on this page only. */
+    [data-screen-label="Sword Combat — How-to / FAQ"]{
+      --teal-300:#FBD9A0; --teal-400:#F6C272; --teal-500:#F2A93F;
+      --teal-600:#D98A26; --teal-700:#B8721F; --teal-800:#935B19; --teal-900:#6E4413;
+      --teal-veil:rgba(242,169,63,0.12); --teal-glow:rgba(242,169,63,0.20);
+      --accent:#F2A93F; --accent-hover:#F6C272; --accent-press:#D98A26;
+      --accent-quiet:rgba(242,169,63,0.10); --focus-ring:#F6C272;
+      --border-strong:#B8721F; --signal-info:#F6C272;
+    }
+  </style>
+</helmet>
+
+<div data-screen-label="Sword Combat — How-to / FAQ" style="font-family:var(--font-serif); background:var(--ink-900); min-height:100vh;">
+
+  <dc-import name="SiteNav" current="sword-faq" hint-size="100%,61px" style="position:sticky; top:0; z-index:100; display:block;"></dc-import>
+
+  <!-- ░░ HEADER ░░ -->
+  <section style="position:relative; border-bottom:1px solid var(--border); overflow:hidden;">
+    <div style="position:absolute; top:-40%; left:30%; width:680px; height:520px; max-width:80vw; background:radial-gradient(ellipse, var(--teal-glow) 0%, transparent 70%); pointer-events:none;"></div>
+    <div style="position:relative; max-width:var(--container); margin:0 auto; padding:4rem clamp(1.25rem,4vw,2.5rem) 3rem;">
+      <div style="margin-bottom:1.3rem; display:inline-flex; align-items:center; gap:0.75rem; font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.16em; font-size:15px; color:var(--accent);">Documentation · Sword Combat</div>
+      <h1 style="font-family:var(--font-display); font-weight:400; font-size:clamp(2.2rem,4.5vw,3.2rem); line-height:1.04; letter-spacing:-0.02em; color:var(--text-strong); margin:0 0 1rem;">SwordCombat — Setup & Guide</h1>
+      <p style="font-family:var(--font-serif); font-size:19px; line-height:1.7; color:var(--text-soft); max-width:640px; margin:0;">What ships in the package, the plugins it needs, how the blueprints fit together, and how to configure the enemy.</p>
+    </div>
+  </section>
+
+  <!-- ░░ PLUGINS ░░ -->
+  <section style="max-width:var(--container); margin:0 auto; padding:3rem 2.5rem 3rem; border-bottom:1px solid var(--border);">
+    <div style="margin-bottom:1.4rem; display:inline-flex; align-items:center; gap:0.75rem; font-family:var(--font-display); text-transform:uppercase; letter-spacing:0.08em; font-size:26px; color:var(--accent);">What Plugins Does the Blueprint Require?</div>
+    <p style="font-family:var(--font-serif); font-size:16.5px; line-height:1.7; color:var(--text-soft); margin:0 0 1.2rem;">If the GameMode does not work correctly, we recommend enabling these plugins.<br>These plugins are used by the blueprint:</p>
+    <ul style="list-style:none; margin:0 0 2rem; padding:0; display:flex; flex-direction:column; gap:0.55rem;">
+      <li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><strong style="font-family:var(--font-display); font-weight:400; color:var(--text-strong);">Motion Warping</strong></li>
+      <li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><strong style="font-family:var(--font-display); font-weight:400; color:var(--text-strong);">Animation Locomotion Library</strong></li>
+      <li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><strong style="font-family:var(--font-display); font-weight:400; color:var(--text-strong);">Animation Modifier Library</strong></li>
+      <li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><strong style="font-family:var(--font-display); font-weight:400; color:var(--text-strong);">Animation Warping</strong></li>
+    </ul>
+    <div style="margin-bottom:1.4rem; font-family:var(--font-display); font-size:21px; color:var(--text-strong);">How to enable them:</div>
+    <ol style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:0.55rem;">
+      <li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">1.</span><span>In the Unreal Editor, go to Edit &gt; Plugins.</span></li>
+      <li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">2.</span><span>Search for each plugin name and tick the Enabled checkbox.</span></li>
+      <li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">3.</span><span>Restart the editor when prompted.</span></li>
+    </ol>
+  </section>
+
+  <!-- ░░ INSTALL ░░ -->
+  <section style="max-width:var(--container); margin:0 auto; padding:3rem 2.5rem 3rem; border-bottom:1px solid var(--border);">
+    <div style="margin-bottom:1.4rem; display:inline-flex; align-items:center; gap:0.75rem; font-family:var(--font-display); text-transform:uppercase; letter-spacing:0.08em; font-size:26px; color:var(--accent);">How to Install the BP in Your Project</div>
+    <div>
+      <div style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span>In World Settings, set GameMode to <code style="font-family:var(--font-mono,ui-monospace,monospace); font-size:15.5px; color:var(--accent); background:var(--accent-quiet); border:1px solid var(--border-strong); border-radius:3px; padding:0.1rem 0.4rem;">BP_Gamemode</code>.</span></div>
+      <button type="button" onClick="{{ z1 }}" style="{{ shotBtn }}"><img src="assets/swcombat-faq/01_WorldSettings_GameMode.png" alt="World Settings — GameMode set to BP_Gamemode" style="display:block; width:100%; height:auto;"></button>
+      <div style="font-family:var(--font-serif); font-size:15px; color:var(--text-muted); margin-top:0.6rem;">World Settings — GameMode set to BP_Gamemode. Click to enlarge.</div>
+    </div>
+  </section>
+
+  <!-- ░░ CHARACTER DIFFERENCE ░░ -->
+  <section style="max-width:var(--container); margin:0 auto; padding:3rem 2.5rem 3rem; border-bottom:1px solid var(--border);">
+    <div style="margin-bottom:1.4rem; display:inline-flex; align-items:center; gap:0.75rem; font-family:var(--font-display); text-transform:uppercase; letter-spacing:0.08em; font-size:26px; color:var(--accent);">WHAT IS THE DIFFERENCE BETWEEN THE USUAL DEMO CHARACTER AND THE SWCOMBAT CHARACTER?</div>
+    
+    <p style="font-family:var(--font-serif); font-size:16.5px; line-height:1.7; color:var(--text-soft); margin:0 0 1.2rem;">The SwCombat Demo character (<code style="font-family:var(--font-mono,ui-monospace,monospace); font-size:15.5px; color:var(--accent); background:var(--accent-quiet); border:1px solid var(--border-strong); border-radius:3px; padding:0.1rem 0.4rem;">SKM_Quinn_Simple_Skeleton_Sw</code>) contains these elements:</p>
+    <ul style="list-style:none; margin:0 0 1.8rem; padding:0 0 0 0.2rem; display:flex; flex-direction:column; gap:0.5rem;"><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span><strong style="font-family:var(--font-display); font-weight:400; color:var(--text-strong);">Visual bones and sockets:</strong> For attaching the weapon to the character.</span></li><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span><strong style="font-family:var(--font-display); font-weight:400; color:var(--text-strong);">Blend Mask:</strong> Used in the <code style="font-family:var(--font-mono,ui-monospace,monospace); font-size:15.5px; color:var(--accent);">ABP_Base</code> AnimGraph (Layered Blend per Bone node).</span></li><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span><strong style="font-family:var(--font-display); font-weight:400; color:var(--text-strong);">Animation Slot:</strong> Used in the <code style="font-family:var(--font-mono,ui-monospace,monospace); font-size:15.5px; color:var(--accent);">ABP_Base</code> AnimGraph and in Animation Montages.</span></li></ul>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:1.4rem; align-items:start;">
+      <div>
+        <button type="button" onClick="{{ z2 }}" style="{{ shotBtn }}"><img src="assets/swcombat-faq/02_SwCombat_Character.png" alt="SwCombat character skeleton" style="display:block; width:100%; height:auto;"></button>
+        <div style="font-family:var(--font-serif); font-size:15px; color:var(--text-muted); margin-top:0.6rem;">SwCombat character skeleton. Click to enlarge.</div>
+      </div>
+      <div>
+        <button type="button" onClick="{{ z3 }}" style="{{ shotBtn }}"><img src="assets/swcombat-faq/03_Original_Character.png" alt="Original demo character skeleton" style="display:block; width:100%; height:auto;"></button>
+        <div style="font-family:var(--font-serif); font-size:15px; color:var(--text-muted); margin-top:0.6rem;">Original demo character skeleton. Click to enlarge.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ BLUEPRINTS ░░ -->
+  <section style="max-width:var(--container); margin:0 auto; padding:3rem 2.5rem 3rem; border-bottom:1px solid var(--border);">
+    <div style="margin-bottom:1.4rem; display:inline-flex; align-items:center; gap:0.75rem; font-family:var(--font-display); text-transform:uppercase; letter-spacing:0.08em; font-size:26px; color:var(--accent);">What Each Blueprint Does and How to Replace the Animations in Them</div>
+    <div style="font-family:var(--font-mono,ui-monospace,monospace); font-size:19px; color:var(--accent); margin:1.8rem 0 0.6rem;">BP_Character</div>
+    <p style="font-family:var(--font-serif); font-size:16.5px; line-height:1.7; color:var(--text-soft); margin:0 0 0.7rem;">the main character blueprint. Used for:</p>
+    <ul style="list-style:none; margin:0; padding:0 0 0 0.2rem; display:flex; flex-direction:column; gap:0.5rem;"><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span>Holding the Skeletal Mesh, capsule collision, camera and movement component.</span></li><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span>Reading player input and running gameplay logic.</span></li><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span>Deciding what the character is doing.</span></li></ul>
+    <div style="font-family:var(--font-mono,ui-monospace,monospace); font-size:19px; color:var(--accent); margin:1.8rem 0 0.6rem;">ABP_Base</div>
+    <p style="font-family:var(--font-serif); font-size:16.5px; line-height:1.7; color:var(--text-soft); margin:0 0 0.7rem;">the main animation blueprint; it connects to <code style="font-family:var(--font-mono,ui-monospace,monospace); font-size:15.5px; color:var(--text-strong);">BP_Character</code> and handles its animations. Used for:</p>
+    <ul style="list-style:none; margin:0; padding:0 0 0 0.2rem; display:flex; flex-direction:column; gap:0.5rem;"><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span>Reading variables from the Character BP.</span></li><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span>Containing state machines and blend spaces.</span></li><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span>Deciding how the character moves.</span></li><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span>Deciding which Animation Layer to use.</span></li></ul>
+    <div style="font-family:var(--font-mono,ui-monospace,monospace); font-size:19px; color:var(--accent); margin:1.8rem 0 0.6rem;">ABP_Layer</div>
+    <p style="font-family:var(--font-serif); font-size:16.5px; line-height:1.7; color:var(--text-soft); margin:0 0 0.7rem;">for assigning or replacing animations.</p>
+    <ul style="list-style:none; margin:0; padding:0 0 0 0.2rem; display:flex; flex-direction:column; gap:0.5rem;"><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span>An Animation Layer Interface that defines empty slots for different animation sets.</span></li><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span>Used for assigning or replacing animations.</span></li><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span>Has two Child Blueprints:</span></li></ul>
+    <ul style="list-style:none; margin:0.5rem 0 0; padding:0 0 0 1.9rem; display:flex; flex-direction:column; gap:0.5rem;"><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span><code style="font-family:var(--font-mono,ui-monospace,monospace); font-size:15.5px; color:var(--text-strong);">ABP_Normal</code> — the unequipped animation set</span></li><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span><code style="font-family:var(--font-mono,ui-monospace,monospace); font-size:15.5px; color:var(--text-strong);">ABP_SwCombat</code> — the sword-equipped animation set</span></li></ul>
+    <p style="font-family:var(--font-serif); font-size:16.5px; line-height:1.7; color:var(--text-soft); margin:1.8rem 0 0;"><strong style="font-family:var(--font-display); font-weight:400; color:var(--text-strong);">How they connect:</strong> the Character BP sets the state, the AnimBP turns that state into a pose, and Anim Layers let you swap parts of that pose logic.</p>
+    <div style="margin-top:1.6rem;">
+      <button type="button" onClick="{{ z4 }}" style="{{ shotBtn }}"><img src="assets/swcombat-faq/04_Replace_Animations.png" alt="Replacing animations in the Anim Layer child blueprints" style="display:block; width:100%; height:auto;"></button>
+      <div style="font-family:var(--font-serif); font-size:15px; color:var(--text-muted); margin-top:0.6rem;">Replacing animations in the Anim Layer child blueprints. Click to enlarge.</div>
+    </div>
+  </section>
+
+  <!-- ░░ ENEMY STATUS ░░ -->
+  <section style="max-width:var(--container); margin:0 auto; padding:3rem 2.5rem 3rem; border-bottom:1px solid var(--border);">
+    <div style="margin-bottom:1.4rem; display:inline-flex; align-items:center; gap:0.75rem; font-family:var(--font-display); text-transform:uppercase; letter-spacing:0.08em; font-size:26px; color:var(--accent);">How to Set the Enemy Status</div>
+    <p style="font-family:var(--font-serif); font-size:16.5px; line-height:1.7; color:var(--text-soft); margin:0 0 1.4rem;">Place the Enemy in the world and set its Character Status:</p>
+    <div style="margin-bottom:1.8rem;">
+      <div style="font-family:var(--font-display); font-size:20px; color:var(--text-strong); margin:1.6rem 0 0.5rem;">Patrol Route</div><p style="font-family:var(--font-serif); font-size:16.5px; line-height:1.7; color:var(--text-soft); margin:0;">Sets the walking path for the enemy. If None, the enemy will stay in place.</p>
+      <div style="font-family:var(--font-display); font-size:20px; color:var(--text-strong); margin:1.6rem 0 0.5rem;">Current State</div><ul style="list-style:none; margin:0; padding:0 0 0 0.2rem; display:flex; flex-direction:column; gap:0.5rem;"><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span>Normal — the enemy will not attack.</span></li><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span>SwCombat — the enemy can attack.</span></li></ul>
+      <div style="font-family:var(--font-display); font-size:20px; color:var(--text-strong); margin:1.6rem 0 0.5rem;">Default Gate</div><p style="font-family:var(--font-serif); font-size:16.5px; line-height:1.7; color:var(--text-soft); margin:0;">Walk / Run / Crouch / Sprint</p>
+      <div style="font-family:var(--font-display); font-size:20px; color:var(--text-strong); margin:1.6rem 0 0.5rem;">Use sense</div><p style="font-family:var(--font-serif); font-size:16.5px; line-height:1.7; color:var(--text-soft); margin:0 0 0.5rem;">Decides what the enemy will respond to. Used in <code style="font-family:var(--font-mono,ui-monospace,monospace); font-size:15.5px; color:var(--accent);">AIC_Enemy</code>.</p><ul style="list-style:none; margin:0; padding:0 0 0 0.2rem; display:flex; flex-direction:column; gap:0.5rem;"><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span>Sight — responds when it sees another character.</span></li><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span>Hear — responds when it hears a sound.</span></li><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span>Damage — responds when it takes damage.</span></li></ul>
+      <div style="font-family:var(--font-display); font-size:20px; color:var(--text-strong); margin:1.6rem 0 0.5rem;">Team Number</div><p style="font-family:var(--font-serif); font-size:16.5px; line-height:1.7; color:var(--text-soft); margin:0;">The enemy will attack characters that are assigned a different team number.</p>
+      <div style="font-family:var(--font-display); font-size:20px; color:var(--text-strong); margin:1.6rem 0 0.5rem;">Immortal</div><p style="font-family:var(--font-serif); font-size:16.5px; line-height:1.7; color:var(--text-soft); margin:0;">If turned on, the enemy's HP will not decrease.</p>
+      <div style="font-family:var(--font-display); font-size:20px; color:var(--text-strong); margin:1.6rem 0 0.5rem;">Heal Amount</div><p style="font-family:var(--font-serif); font-size:16.5px; line-height:1.7; color:var(--text-soft); margin:0;">The amount the enemy's HP will increase by after it drops below 25%.</p>
+    </div>
+    <div>
+      <button type="button" onClick="{{ z5 }}" style="{{ shotBtn }}"><img src="assets/swcombat-faq/05_Enemy_Status.png" alt="Enemy Character Status settings" style="display:block; width:100%; height:auto;"></button>
+      <div style="font-family:var(--font-serif); font-size:15px; color:var(--text-muted); margin-top:0.6rem;">Enemy Character Status settings. Click to enlarge.</div>
+    </div>
+  </section>
+
+  <!-- ░░ CROSS-LINKS ░░ -->
+  <section style="max-width:var(--container); margin:3rem auto 1rem; padding:0 2.5rem;">
+    <div style="display:grid; grid-template-columns:1fr; gap:1px; background:var(--border); border:1px solid var(--border); border-radius:var(--radius-md); overflow:hidden;">
+      <a href="Sword-Combat-Detail.dc.html" style="text-decoration:none; background:var(--surface-card); padding:1.6rem 1.8rem; display:flex; flex-direction:column; gap:0.4rem; transition:background .2s;" style-hover="background:var(--surface-hover)">
+        <span style="font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.13em; font-size:15px; color:var(--accent);">Product</span>
+        <span style="font-family:var(--font-display); font-size:19px; color:var(--text-strong);">See Sword Combat Animation Detail →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer style="max-width:var(--container-wide); margin:0 auto; padding:1rem 2rem 2.5rem;">
+    <div style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:space-between; align-items:flex-start; border-top:1px solid var(--border); padding-top:2.5rem; padding-bottom:2rem;">
+      <div style="max-width:440px; display:flex; flex-direction:column; gap:1.15rem;">
+        <div style="display:flex; align-items:center; gap:0.7rem;">
+          <img src="assets/logo_RPG.png" alt="RobinPG" style="width:32px; height:32px; object-fit:contain;">
+          <span style="font-family:var(--font-display); font-size:20px; color:var(--text-strong);">RobinPictureGraphic</span>
+        </div>
+        <div style="font-family:var(--font-display); font-size:1.25rem; color:#39CCCE; margin-top:0.2rem;">Contact us : <a href="mailto:robinpicturegraphic@gmail.com" style="color:#39CCCE; text-decoration:none; border-bottom:1px solid #1C8688;" style-hover="border-color:#39CCCE">robinpicturegraphic@gmail.com</a></div>
+        <div style="display:flex; gap:0.7rem; align-items:center;">
+          <a href="https://www.facebook.com/RobinPictureGraphic" target="_blank" rel="noopener" aria-label="Facebook" style="width:38px; height:38px; border-radius:50%; background:#1877F2; display:flex; align-items:center; justify-content:center; transition:transform .2s;" style-hover="transform:translateY(-2px)"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.8V3.7c-.3-.05-1.3-.13-2.5-.13-2.5 0-4.2 1.53-4.2 4.32v2.1H7.4V13h2.7v8z"></path></svg></a>
+          <a href="https://www.youtube.com/@RobinPG" target="_blank" rel="noopener" aria-label="YouTube" style="width:38px; height:38px; border-radius:50%; background:#FF0000; display:flex; align-items:center; justify-content:center; transition:transform .2s;" style-hover="transform:translateY(-2px)"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M21.6 7.2c-.23-.86-.9-1.54-1.76-1.77C18.27 5 12 5 12 5s-6.27 0-7.84.43c-.86.23-1.53.91-1.76 1.77C2 8.78 2 12 2 12s0 3.22.4 4.8c.23.86.9 1.54 1.76 1.77C5.73 19 12 19 12 19s6.27 0 7.84-.43c.86-.23 1.53-.91 1.76-1.77C22 15.22 22 12 22 12s0-3.22-.4-4.8zM10 15V9l5.2 3-5.2 3z"></path></svg></a>
+        </div>
+      </div>
+      <div style="display:flex; gap:3rem; flex-wrap:wrap;">
+        <div style="display:flex; flex-direction:column; gap:0.7rem;">
+          <div style="font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.14em; font-size:15px; color:#39CCCE; margin-bottom:0.2rem;">Basic Movement</div>
+          <a href="Basic-Movement-Detail.dc.html" style="font-family:var(--font-serif); font-size:15px; color:var(--text-soft); text-decoration:none;" style-hover="color:#39CCCE">Detail</a>
+          <a href="Basic-Movement-Guide.dc.html" style="font-family:var(--font-serif); font-size:15px; color:var(--text-soft); text-decoration:none;" style-hover="color:#39CCCE">Setup &amp; Guide</a>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:0.7rem;">
+          <div style="font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.14em; font-size:15px; color:#F2A93F; margin-bottom:0.2rem;">Sword Combat</div>
+          <a href="Sword-Combat-Detail.dc.html" style="font-family:var(--font-serif); font-size:15px; color:var(--text-soft); text-decoration:none;" style-hover="color:#39CCCE">Detail</a>
+          <a href="Sword-Combat-Guide.dc.html" style="font-family:var(--font-serif); font-size:15px; color:var(--text-soft); text-decoration:none;" style-hover="color:#39CCCE">Setup & Guide</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <sc-if value="{{ zoomOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeZoom }}" style="position:fixed; inset:0; z-index:200; background:rgba(6,11,12,0.92); display:flex; align-items:center; justify-content:center; padding:2.5rem; cursor:zoom-out;">
+      {{ zoomImg }}
+      <button type="button" onClick="{{ closeZoom }}" aria-label="Close" style="position:absolute; top:1.2rem; right:1.4rem; width:40px; height:40px; border-radius:var(--radius-md); background:transparent; border:1px solid var(--border); color:var(--accent); font-size:22px; cursor:pointer;">×</button>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { zoom: null };
+
+  componentDidMount() {
+    this._onKey = (e) => { if (e.key === 'Escape') this.setState({ zoom: null }); };
+    document.addEventListener('keydown', this._onKey);
+  }
+  componentWillUnmount() { document.removeEventListener('keydown', this._onKey); }
+
+  renderVals() {
+    const open = (src) => () => this.setState({ zoom: src });
+    const base = 'assets/swcombat-faq/';
+    return {
+      shotBtn: {
+        display: 'block', width: '100%', marginTop: '1rem', padding: 0,
+        border: '1px solid var(--border)', borderRadius: 'var(--radius-sm)',
+        overflow: 'hidden', background: 'var(--ink-850)', cursor: 'zoom-in',
+      },
+      z1: open(base + '01_WorldSettings_GameMode.png'),
+      z2: open(base + '02_SwCombat_Character.png'),
+      z3: open(base + '03_Original_Character.png'),
+      z4: open(base + '04_Replace_Animations.png'),
+      z5: open(base + '05_Enemy_Status.png'),
+      zoomOpen: !!this.state.zoom,
+      zoomImg: this.state.zoom ? React.createElement('img', { src: this.state.zoom, alt: '', style: { maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', border: '1px solid var(--border)' } }) : null,
+      closeZoom: () => this.setState({ zoom: null }),
+    };
+  }
+}
+
+</script>
+</body>
+</html>

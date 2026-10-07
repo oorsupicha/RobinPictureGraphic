@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/base.css">
+  <link rel="stylesheet" href="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/styles.css">
+  <script src="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/_ds_bundle.js"></script>
+  <script src="image-slot.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--ink-900); color: var(--text); overflow-wrap: anywhere; }
+  </style>
+</helmet>
+
+<div data-screen-label="Basic Movement — Blueprint" style="font-family:var(--font-serif); background:var(--ink-900); min-height:100vh;">
+
+  <dc-import name="SiteNav" current="basic-blueprint" hint-size="100%,61px" style="position:sticky; top:0; z-index:100; display:block;"></dc-import>
+
+  <!-- ░░ HEADER ░░ -->
+  <section style="position:relative; border-bottom:1px solid var(--border); overflow:hidden;">
+    <div style="position:absolute; top:-40%; left:30%; width:680px; height:520px; max-width:80vw; background:radial-gradient(ellipse, var(--teal-glow) 0%, transparent 70%); pointer-events:none;"></div>
+    <div style="position:relative; max-width:var(--container); margin:0 auto; padding:4rem clamp(1.25rem,4vw,2.5rem) 3rem;">
+      <div style="margin-bottom:1.3rem; display:inline-flex; align-items:center; gap:0.75rem; font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.16em; font-size:15px; color:var(--accent);">Documentation · Basic Movement Female<span style="width:40px; height:1px; background:var(--border);"></span></div>
+      <h1 style="font-family:var(--font-display); font-weight:400; font-size:clamp(2.2rem,4.5vw,3.2rem); line-height:1.04; letter-spacing:-0.02em; color:var(--text-strong); margin:0 0 1rem;">Setup &amp; Guide</h1>
+      <p style="font-family:var(--font-serif); font-size:19px; line-height:1.7; color:var(--text-soft); max-width:640px; margin:0 0 1.6rem;">Everything you need to get the Basic Movement Female set running in Unreal Engine 5 — set up as a child blueprint on top of the Advanced Locomotion System V4 by LongmireLocomotion.</p>
+    </div>
+  </section>
+
+  <!-- ░░ ABOUT CALLOUT ░░ -->
+  <section style="max-width:var(--container); margin:0 auto; padding:3rem clamp(1.25rem,4vw,2.5rem) 0;">
+    <x-import component-from-global-scope="RobinPGDesignSystem_edc0b1.Callout" tone="info" hint-size="100%,150px"><div style="font-family:var(--font-display); font-size:20px; color:var(--text-strong); margin-bottom:0.5rem;">About the blueprint we provide</div>The blueprint and guides we provide are designed to show how our products will look in Unreal Engine. The blueprint is based on the Advanced Locomotion System V4 by LongmireLocomotion, available on the Unreal Engine Marketplace — we do not hold the rights or ownership of this blueprint. We provide the child blueprint for the animations: it contains the specific animation sequences and adjustments. To use this set effectively you must first obtain the main ALS blueprint with the fundamental character-movement logic and settings; our child blueprint enhances and customizes those base functionalities.</x-import>
+  </section>
+
+  <!-- ░░ WHAT YOU NEED ░░ -->
+  <section style="max-width:var(--container); margin:0 auto; padding:3rem clamp(1.25rem,4vw,2.5rem) 0;">
+    <div style="margin-bottom:1.4rem; display:inline-flex; align-items:center; gap:0.75rem; font-family:var(--font-display); text-transform:uppercase; letter-spacing:0.08em; font-size:18px; color:var(--accent);">What you need to get<span style="width:40px; height:1px; background:var(--border);"></span></div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:var(--radius-md); overflow:hidden;">
+      <a href="https://www.fab.com/listings/ef9651a4-fb55-4866-a2d9-1b38b028f9c7" target="_blank" rel="noopener" style="text-decoration:none; background:var(--surface-card); padding:1.7rem 1.9rem; display:flex; flex-direction:column; gap:0.5rem; transition:background .2s;" style-hover="background:var(--surface-hover)">
+        <span style="font-family:var(--font-display); text-transform:uppercase; letter-spacing:0.06em; font-size:18px; color:var(--accent);">1 · Main ALS blueprint</span>
+        <span style="font-family:var(--font-display); font-size:20px; color:var(--text-strong);">Advanced Locomotion System V4 →</span>
+        <span style="font-family:var(--font-serif); font-size:15.5px; line-height:1.6; color:var(--text-soft);">Free on the Unreal Marketplace (FAB). This is the base our set extends.</span>
+        <img src="assets/guide/need-als.png" alt="" style="display:block; width:100%; margin-top:0.4rem; border:1px solid var(--border); border-radius:var(--radius-sm);">
+      </a>
+      <a href="https://drive.google.com/file/d/17En96oKDUSNlccwvqcVCbVcNmENE4n9L/view?usp=sharing" target="_blank" rel="noopener" style="text-decoration:none; background:var(--surface-card); padding:1.7rem 1.9rem; display:flex; flex-direction:column; gap:0.5rem; transition:background .2s;" style-hover="background:var(--surface-hover)">
+        <span style="font-family:var(--font-display); text-transform:uppercase; letter-spacing:0.06em; font-size:18px; color:var(--accent);">2 · Child ALS blueprint</span>
+        <span style="font-family:var(--font-display); font-size:20px; color:var(--text-strong);">RPG_BasicMove_Blueprint →</span>
+        <span style="font-family:var(--font-serif); font-size:15.5px; line-height:1.6; color:var(--text-soft);">Our "RPG_BasicMove_BP" folder — Character, Animation &amp; Retarget blueprints, plus the input keys.</span>
+        <img src="assets/guide/need-rpg.png" alt="" style="display:block; width:100%; margin-top:0.4rem; border:1px solid var(--border); border-radius:var(--radius-sm);">
+      </a>
+    </div>
+  </section>
+
+  <!-- ░░ SETUP VIDEO ░░ -->
+  <section style="max-width:var(--container); margin:0 auto; padding:3rem clamp(1.25rem,4vw,2.5rem) 0;">
+    <div style="margin-bottom:1.4rem; display:inline-flex; align-items:center; gap:0.75rem; font-family:var(--font-display); text-transform:uppercase; letter-spacing:0.08em; font-size:18px; color:var(--accent);">Setup video<span style="width:40px; height:1px; background:var(--border);"></span></div>
+    <div style="position:relative; width:100%; padding-top:56.25%; border:1px solid var(--border); border-radius:var(--radius-md); overflow:hidden; background:var(--ink-850);">
+      <iframe src="https://www.youtube.com/embed/AenW3Cra8fc" title="ALS setup video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute; inset:0; width:100%; height:100%; border:0;"></iframe>
+    </div>
+  </section>
+
+  <!-- ░░ SETUP STEPS ░░ -->
+  <section style="max-width:var(--container); margin:0 auto; padding:3rem clamp(1.25rem,4vw,2.5rem) 2rem;">
+    <div style="margin-bottom:2rem; display:inline-flex; align-items:center; gap:0.75rem; font-family:var(--font-display); text-transform:uppercase; letter-spacing:0.08em; font-size:18px; color:var(--accent);">How to install ALS &amp; setup RPG blueprint<span style="width:40px; height:1px; background:var(--border);"></span></div>
+    <div style="display:flex; flex-direction:column; gap:1px; background:var(--border); border:1px solid var(--border); border-radius:var(--radius-md); overflow:hidden;">
+      <sc-for list="{{ steps }}" as="s" hint-placeholder-count="0">
+        <div style="background:var(--surface-card); padding:clamp(1.2rem,4vw,1.8rem) clamp(1rem,4vw,2rem); display:grid; grid-template-columns:auto minmax(0,1fr); gap:clamp(0.9rem,3vw,1.4rem); align-items:start;">
+          <div style="width:48px; height:48px; border:1px solid var(--border-strong); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:22px; color:var(--accent); box-shadow:var(--glow-soft);">{{ s.n }}</div>
+          <div>
+            <div style="font-family:var(--font-display); font-size:21px; color:var(--text-strong); margin-bottom:0.4rem;">{{ s.title }}</div>
+            <div style="display:flex; flex-direction:column; gap:0.5rem;">
+              <sc-for list="{{ s.body }}" as="para" hint-placeholder-count="1">
+                <div style="font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);">{{ para }}</div>
+              </sc-for>
+            </div>
+            <sc-if value="{{ s.bullets }}" hint-placeholder-val="">
+              <ul style="list-style:none; margin:0.7rem 0 0; padding:0; display:flex; flex-direction:column; gap:0.4rem;">
+                <sc-for list="{{ s.bullets }}" as="b" hint-placeholder-count="3">
+                  <li style="display:flex; gap:0.6rem; font-family:var(--font-serif); font-size:15.5px; line-height:1.5; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span>{{ b }}</span></li>
+                </sc-for>
+              </ul>
+            </sc-if>
+            <sc-if value="{{ s.gamemode }}" hint-placeholder-val="">
+              <div style="margin-top:0.8rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.7; color:var(--text-soft);">GameMode Override = “ALS_GameMode_SP”</div>
+              <div style="font-family:var(--font-serif); font-size:16.5px; line-height:1.7; color:var(--text-soft);">Default Pawn Class = “BP_RPG_FemaleUE5_CH” or “BP_RPG_FemaleUE4_CH”</div>
+              <div style="margin-top:0.6rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.7; color:var(--text-soft);">Enjoy the Experience!!!</div>
+            </sc-if>
+            {{ s.shot1El }}
+            {{ s.shot2El }}
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ░░ TIP & TRICK ░░ -->
+  <section style="max-width:var(--container); margin:0 auto; padding:1rem clamp(1.25rem,4vw,2.5rem) 2rem;">
+    <div style="margin-bottom:1.4rem; display:inline-flex; align-items:center; gap:0.75rem; font-family:var(--font-display); text-transform:uppercase; letter-spacing:0.08em; font-size:18px; color:var(--accent);">Tip &amp; trick<span style="width:40px; height:1px; background:var(--border);"></span></div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:1.4rem;">
+      <x-import component-from-global-scope="RobinPGDesignSystem_edc0b1.Callout" tone="warning" title="Problem" hint-size="100%,120px">The camera jiggles while the character is falling near a platform or ledge.</x-import>
+      <x-import component-from-global-scope="RobinPGDesignSystem_edc0b1.Callout" tone="tip" title="Solution" hint-size="100%,120px">Add a camera socket on the character's head skeleton:<ul style="list-style:none; margin:0.6rem 0 0; padding:0; display:flex; flex-direction:column; gap:0.35rem;"><li style="display:flex; gap:0.6rem;"><span style="color:var(--accent);">▸</span><span>FP_Camera</span></li><li style="display:flex; gap:0.6rem;"><span style="color:var(--accent);">▸</span><span>TP_CameraTrace_R</span></li><li style="display:flex; gap:0.6rem;"><span style="color:var(--accent);">▸</span><span>TP_CameraTrace_L</span></li></ul><img src="assets/guide/tip-camera.png" alt="" style="display:block; width:100%; max-width:280px; margin-top:0.8rem; border:1px solid var(--border); border-radius:var(--radius-sm);"></x-import>
+    </div>
+  </section>
+
+  <!-- ░░ CROSS-LINKS ░░ -->
+  <section style="max-width:var(--container); margin:0 auto; padding:1rem clamp(1.25rem,4vw,2.5rem) 1rem; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:var(--radius-md); overflow:hidden;">
+    <a href="Basic-Movement-Detail.dc.html" style="text-decoration:none; background:var(--surface-card); padding:1.6rem 1.8rem; display:flex; flex-direction:column; gap:0.4rem; transition:background .2s;" style-hover="background:var(--surface-hover)">
+      <span style="font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.13em; font-size:15px; color:var(--accent);">Product</span>
+      <span style="font-family:var(--font-display); font-size:19px; color:var(--text-strong);">See Basic Movement Animation Detail →</span>
+    </a>
+    <div style="background:var(--surface-card); padding:1.6rem 1.8rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
+      <span style="font-family:var(--font-serif); font-size:15.5px; color:var(--text-soft);">Stuck on setup? Reach out by email — we're happy to help.</span>
+    </div>
+  </section>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer style="max-width:var(--container-wide); margin:0 auto; padding:1rem 2rem 2.5rem;">
+    <div style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:space-between; align-items:flex-start; border-top:1px solid var(--border); padding-top:2.5rem; padding-bottom:2rem;">
+      <div style="max-width:440px; display:flex; flex-direction:column; gap:1.15rem;">
+        <div style="display:flex; align-items:center; gap:0.7rem;">
+          <img src="assets/logo_RPG.png" alt="RobinPG" style="width:32px; height:32px; object-fit:contain;">
+          <span style="font-family:var(--font-display); font-size:20px; color:var(--text-strong);">RobinPictureGraphic</span>
+        </div>
+        <div style="font-family:var(--font-display); font-size:1.25rem; color:#39CCCE; margin-top:0.2rem;">Contact us : <a href="mailto:robinpicturegraphic@gmail.com" style="color:#39CCCE; text-decoration:none; border-bottom:1px solid #1C8688;" style-hover="border-color:#39CCCE">robinpicturegraphic@gmail.com</a></div>
+        <div style="display:flex; gap:0.7rem; align-items:center;">
+          <a href="https://www.facebook.com/RobinPictureGraphic" target="_blank" rel="noopener" aria-label="Facebook" style="width:38px; height:38px; border-radius:50%; background:#1877F2; display:flex; align-items:center; justify-content:center; transition:transform .2s;" style-hover="transform:translateY(-2px)"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.8V3.7c-.3-.05-1.3-.13-2.5-.13-2.5 0-4.2 1.53-4.2 4.32v2.1H7.4V13h2.7v8z"></path></svg></a>
+          <a href="https://www.youtube.com/@RobinPG" target="_blank" rel="noopener" aria-label="YouTube" style="width:38px; height:38px; border-radius:50%; background:#FF0000; display:flex; align-items:center; justify-content:center; transition:transform .2s;" style-hover="transform:translateY(-2px)"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M21.6 7.2c-.23-.86-.9-1.54-1.76-1.77C18.27 5 12 5 12 5s-6.27 0-7.84.43c-.86.23-1.53.91-1.76 1.77C2 8.78 2 12 2 12s0 3.22.4 4.8c.23.86.9 1.54 1.76 1.77C5.73 19 12 19 12 19s6.27 0 7.84-.43c.86-.23 1.53-.91 1.76-1.77C22 15.22 22 12 22 12s0-3.22-.4-4.8zM10 15V9l5.2 3-5.2 3z"></path></svg></a>
+        </div>
+      </div>
+      <div style="display:flex; gap:3rem; flex-wrap:wrap;">
+        <div style="display:flex; flex-direction:column; gap:0.7rem;">
+          <div style="font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.14em; font-size:15px; color:#39CCCE; margin-bottom:0.2rem;">Basic Movement</div>
+          <a href="Basic-Movement-Detail.dc.html" style="font-family:var(--font-serif); font-size:15px; color:var(--text-soft); text-decoration:none;" style-hover="color:#39CCCE">Detail</a>
+          <a href="Basic-Movement-Guide.dc.html" style="font-family:var(--font-serif); font-size:15px; color:var(--text-soft); text-decoration:none;" style-hover="color:#39CCCE">Setup &amp; Guide</a>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:0.7rem;">
+          <div style="font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.14em; font-size:15px; color:#F2A93F; margin-bottom:0.2rem;">Sword Combat</div>
+          <a href="Sword-Combat-Detail.dc.html" style="font-family:var(--font-serif); font-size:15px; color:var(--text-soft); text-decoration:none;" style-hover="color:#39CCCE">Detail</a>
+          <a href="Sword-Combat-Guide.dc.html" style="font-family:var(--font-serif); font-size:15px; color:var(--text-soft); text-decoration:none;" style-hover="color:#39CCCE">Setup &amp; Guide</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const mkImg = (src, mt) => src ? React.createElement('img', { src: src, alt: '', style: { display: 'block', width: '100%', maxWidth: '620px', marginTop: mt, border: '1px solid var(--border)', borderRadius: 'var(--radius-md)' } }) : null;
+    return {
+      onBuy: () => window.open('https://www.fab.com', '_blank'),
+      steps: [
+        { n: '1', title: 'Create a new ALS project', body: ['Get Advanced Locomotion System V4 and create a new ALS project to work from.'], shot1: 'assets/guide/step1a.png', shot2: 'assets/guide/step1.png' },
+        { n: '2', title: 'Migrate the GameMode', body: ['Open the ALS project and migrate "ALS_GameMode_SP" into your project\'s Content folder.'], shot1: 'assets/guide/step2.png' },
+        { n: '3', title: 'Import the RPG folder', body: ['Hard-import our "RPG_BasicMove_BP" folder into your project\'s Content folder.', 'Now your Content folder must contain these three folders:'], bullets: ['AdvancedLocomotionV4', 'RPG_BasicMove', 'RPG_BasicMove_BP'], shot1: 'assets/guide/step3.png' },
+        { n: '4', title: 'Import the input keys', body: ['Open your project.', 'In Edit → Project Settings → Engine · Input → Import (top right).', 'Import the "Input_ALS" file we provide.'], shot1: 'assets/guide/step4.png' },
+        { n: '5', title: 'Add the overlay states', body: ['Open the "ALS_OverlayState" enumerator and add three new entries:'], bullets: ['Normal_A', 'Normal_B', 'Normal_C'], shot1: 'assets/guide/step5a.png', shot2: 'assets/guide/step5.png' },
+        { n: '6', title: 'Compile & verify', body: ['Compile the RPG blueprint to check for errors.', 'In BP_RPG_FemaleUE5_CH, confirm the "Switch on ALS_OverlayState" node is connected to the three new enumerators.'], shot1: 'assets/guide/step6.png' },
+        { n: '7', title: 'Set the GameMode & play', body: ['Set GameMode in World Settings.'], gamemode: true, shot1: 'assets/guide/step7.png' },
+      ].map(function(s){ return Object.assign({}, s, { shot1El: mkImg(s.shot1, '1rem'), shot2El: mkImg(s.shot2, '0.8rem') }); }),
+    };
+  }
+}
+</script>
+</body>
+</html>

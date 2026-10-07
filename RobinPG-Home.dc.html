@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/base.css">
+  <link rel="stylesheet" href="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/styles.css">
+  <script src="_ds/robinpg-design-system-edc0b12d-1c66-4b9b-ba11-c0b8fe1daa11/_ds_bundle.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--ink-900); color: var(--text); }
+    @media (prefers-reduced-motion: reduce){ html { scroll-behavior: auto; } }
+    [data-theme="ember"]{
+      --teal-300:#FBD9A0; --teal-400:#F6C272; --teal-500:#F2A93F;
+      --teal-600:#D98A26; --teal-700:#B8721F; --teal-800:#935B19; --teal-900:#6E4413;
+      --teal-veil:rgba(242,169,63,0.12); --teal-glow:rgba(242,169,63,0.20);
+      --accent:#F2A93F; --accent-hover:#F6C272; --accent-press:#D98A26;
+      --accent-quiet:rgba(242,169,63,0.10); --focus-ring:#F6C272;
+      --border-strong:#B8721F; --signal-info:#F6C272;
+    }
+  </style>
+</helmet>
+
+<div data-screen-label="RobinPG Home" style="font-family:var(--font-serif); background:var(--ink-900); min-height:100vh;">
+
+  <dc-import name="SiteNav" current="home" hint-size="100%,61px" style="position:sticky; top:0; z-index:100; display:block;"></dc-import>
+
+  <!-- ░░ HERO ░░ -->
+  <section style="position:relative; padding:clamp(2.5rem,8vw,5.5rem) clamp(1.25rem,4vw,1.5rem) clamp(3rem,8vw,5rem); overflow:hidden; display:flex; flex-direction:column; align-items:center; text-align:center;">
+    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:980px; height:640px; max-width:130vw; background:radial-gradient(ellipse, var(--teal-glow) 0%, transparent 70%); pointer-events:none;"></div>
+    <div style="position:absolute; inset:0; background-image:linear-gradient(var(--white-08) 1px,transparent 1px),linear-gradient(90deg,var(--white-08) 1px,transparent 1px); background-size:64px 64px; opacity:0.5; pointer-events:none; -webkit-mask-image:radial-gradient(ellipse at center, black 22%, transparent 70%); mask-image:radial-gradient(ellipse at center, black 22%, transparent 70%);"></div>
+    <div style="position:relative; display:flex; flex-direction:column; align-items:center; gap:1.4rem; width:100%; max-width:760px; min-width:0;">
+      <div style="position:relative; width:108px; height:108px; display:flex; align-items:center; justify-content:center;">
+        <div style="position:absolute; inset:-6px; border-radius:50%; background:radial-gradient(circle, var(--teal-glow), transparent 70%);"></div>
+        <img src="assets/logo_RPG.png" alt="RobinPG" style="position:relative; width:94px; height:94px; object-fit:contain;">
+      </div>
+      <h1 style="font-family:var(--font-display); font-weight:400; font-size:clamp(2.2rem,6vw,4.6rem); line-height:1.05; letter-spacing:-0.025em; color:var(--text-strong); margin:0; text-wrap:balance;">Game motion &amp; <span style="font-style:italic; color:var(--accent);">animation</span> production</h1>
+      <p style="font-family:var(--font-serif); font-size:20px; line-height:1.68; color:var(--text-soft); max-width:540px; margin:0; text-wrap:pretty;">We build character animation sets for Unreal Engine 5 — ready to retarget, shipped with FBX source, demo blueprints and step-by-step guides.</p>
+      <div style="display:flex; gap:0.9rem; flex-wrap:wrap; justify-content:center; margin-top:0.3rem;">
+        <x-import component-from-global-scope="RobinPGDesignSystem_edc0b1.Button" size="lg" on-click="{{ onBrowse }}" hint-size="auto,52px">Browse products</x-import>
+        <x-import component-from-global-scope="RobinPGDesignSystem_edc0b1.Button" size="lg" variant="secondary" arrow="{{ true }}" on-click="{{ onBuy }}" hint-size="auto,52px">Buy on FAB</x-import>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:var(--radius-md); overflow:hidden; margin-top:0.8rem; width:100%; max-width:560px;">
+        <div style="padding:0.9rem 1rem; background:var(--ink-900);"><div style="font-family:var(--font-display); font-size:1.7rem; color:var(--accent); line-height:1;">2</div><div style="font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.1em; font-size:15px; color:var(--text-muted); margin-top:0.3rem;">Products</div></div>
+        <div style="padding:0.9rem 1rem; background:var(--ink-900);"><div style="font-family:var(--font-display); font-size:1.7rem; color:var(--accent); line-height:1;">269</div><div style="font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.1em; font-size:15px; color:var(--text-muted); margin-top:0.3rem;">Basic movement pack</div></div>
+        <div style="padding:0.9rem 1rem; background:var(--ink-900);"><div style="font-family:var(--font-display); font-size:1.7rem; color:var(--accent); line-height:1;">903</div><div style="font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.1em; font-size:15px; color:var(--text-muted); margin-top:0.3rem;">Sword combat pack</div></div>
+        <div style="padding:0.9rem 1rem; background:var(--ink-900);"><div style="font-family:var(--font-display); font-size:1.7rem; color:var(--accent); line-height:1;">5.2+</div><div style="font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.1em; font-size:15px; color:var(--text-muted); margin-top:0.3rem;">UE version</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ PRODUCTS ░░ -->
+  <section id="products" style="scroll-margin-top:80px; max-width:var(--container); margin:0 auto; padding:2rem clamp(1.25rem,4vw,2.5rem) 2rem;">
+    <div style="margin-bottom:1.8rem;">
+      <h2 style="font-family:var(--font-display); font-weight:400; font-size:clamp(1.8rem,3.4vw,2.5rem); letter-spacing:-0.01em; color:var(--text-strong); margin:0;">Our products</h2>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1.6rem;">
+      <sc-for list="{{ products }}" as="p" hint-placeholder-count="2">
+        <div data-theme="{{ p.theme }}" style="background:var(--surface-card); border:1px solid var(--border); border-radius:var(--radius-md); overflow:hidden; display:flex; flex-wrap:wrap; flex-direction:row-reverse; align-items:center;">
+          <a href="{{ p.detail }}" style="display:block; flex:1.7 1 420px; min-width:0; text-decoration:none;">
+            <img src="{{ p.cover }}" alt="{{ p.name }} cover" style="display:block; width:100%; height:auto; aspect-ratio:16/9;">
+          </a>
+          <div style="flex:1 1 300px; box-sizing:border-box; padding:1.1rem 1.4rem; min-width:0; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; gap:0.6rem;">
+            <h3 style="font-family:var(--font-display); font-weight:400; font-size:clamp(1.7rem,3vw,2.3rem); line-height:1.02; letter-spacing:-0.02em; color:var(--text-strong); margin:0;">{{ p.name }}</h3>
+            <p style="font-family:var(--font-serif); font-size:15px; line-height:1.5; color:var(--text-soft); margin:0; text-wrap:pretty;">{{ p.tagline }}</p>
+            <div style="display:flex; align-items:stretch; border:1px solid var(--border); border-radius:var(--radius-sm); overflow:hidden;">
+              <sc-for list="{{ p.stats }}" as="s" hint-placeholder-count="3">
+                <div style="padding:0.45rem 0.9rem; border-right:1px solid var(--border);">
+                  <div style="font-family:var(--font-display); font-size:1.5rem; line-height:1; color:var(--accent);">{{ s.n }}</div>
+                  <div style="font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.1em; font-size:15px; color:var(--text-muted); margin-top:0.3rem;">{{ s.u }}</div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.6rem 1.2rem; flex-wrap:wrap; margin-top:0.2rem;">
+              <x-import component-from-global-scope="RobinPGDesignSystem_edc0b1.Button" size="md" variant="secondary" arrow="{{ true }}" on-click="{{ onDemo }}" hint-size="auto,40px">Download demo</x-import>
+              <a href="{{ p.detail }}" style="font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.05em; font-size:16px; color:var(--accent); text-decoration:none;">View detail →</a>
+              <a href="{{ p.blueprint }}" style="font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.05em; font-size:16px; color:var(--text-soft); text-decoration:none;" style-hover="color:var(--accent)">{{ p.blueprintLabel }}</a>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ░░ NEWS & UPDATES ░░ -->
+  <section style="max-width:var(--container); margin:0 auto; padding:3.5rem 2.5rem 1.5rem;">
+    <h2 style="font-family:var(--font-display); font-weight:400; font-size:clamp(1.8rem,3.4vw,2.5rem); letter-spacing:-0.01em; color:var(--text-strong); margin:0 0 2rem;">News and Product Update</h2>
+    <div style="display:flex; flex-direction:column; gap:1.5rem;">
+      <sc-for list="{{ news }}" as="n" hint-placeholder-count="5">
+        <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; font-family:var(--font-serif); font-size:17px; line-height:1.5; color:var(--accent);">
+          <span><span style="font-family:var(--font-condensed); letter-spacing:0.03em;">{{ n.date }}</span> : {{ n.body }}</span>
+          <sc-if value="{{ n.href }}" hint-placeholder-val="">
+            <a href="{{ n.href }}" target="_blank" rel="noopener" aria-label="Open link" style="color:var(--accent); display:inline-flex; align-items:center; transition:color .2s;" style-hover="color:var(--accent-hover)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></a>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer style="max-width:var(--container-wide); margin:0 auto; padding:1rem 2rem 2.5rem;">
+    <div style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:space-between; align-items:flex-start; border-top:1px solid var(--border); padding-top:2.5rem; padding-bottom:2rem;">
+      <div style="max-width:440px; display:flex; flex-direction:column; gap:1.15rem;">
+        <div style="display:flex; align-items:center; gap:0.7rem;">
+          <img src="assets/logo_RPG.png" alt="RobinPG" style="width:32px; height:32px; object-fit:contain;">
+          <span style="font-family:var(--font-display); font-size:20px; color:var(--text-strong);">RobinPictureGraphic</span>
+        </div>
+        <div style="font-family:var(--font-display); font-size:1.25rem; color:#39CCCE; margin-top:0.2rem;">Contact us : <a href="mailto:robinpicturegraphic@gmail.com" style="color:#39CCCE; text-decoration:none; border-bottom:1px solid #1C8688;" style-hover="border-color:#39CCCE">robinpicturegraphic@gmail.com</a></div>
+        <div style="display:flex; gap:0.7rem; align-items:center;">
+          <a href="https://www.facebook.com/RobinPictureGraphic" target="_blank" rel="noopener" aria-label="Facebook" style="width:38px; height:38px; border-radius:50%; background:#1877F2; display:flex; align-items:center; justify-content:center; transition:transform .2s;" style-hover="transform:translateY(-2px)"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.8V3.7c-.3-.05-1.3-.13-2.5-.13-2.5 0-4.2 1.53-4.2 4.32v2.1H7.4V13h2.7v8z"/></svg></a>
+          <a href="https://www.youtube.com/@RobinPG" target="_blank" rel="noopener" aria-label="YouTube" style="width:38px; height:38px; border-radius:50%; background:#FF0000; display:flex; align-items:center; justify-content:center; transition:transform .2s;" style-hover="transform:translateY(-2px)"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M21.6 7.2c-.23-.86-.9-1.54-1.76-1.77C18.27 5 12 5 12 5s-6.27 0-7.84.43c-.86.23-1.53.91-1.76 1.77C2 8.78 2 12 2 12s0 3.22.4 4.8c.23.86.9 1.54 1.76 1.77C5.73 19 12 19 12 19s6.27 0 7.84-.43c.86-.23 1.53-.91 1.76-1.77C22 15.22 22 12 22 12s0-3.22-.4-4.8zM10 15V9l5.2 3-5.2 3z"/></svg></a>
+        </div>
+      </div>
+      <div style="display:flex; gap:3rem; flex-wrap:wrap;">
+        <div style="display:flex; flex-direction:column; gap:0.7rem;">
+          <div style="font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.14em; font-size:15px; color:#39CCCE; margin-bottom:0.2rem;">Basic Movement</div>
+          <a href="Basic-Movement-Detail.dc.html" style="font-family:var(--font-serif); font-size:15px; color:var(--text-soft); text-decoration:none;" style-hover="color:#39CCCE">Detail</a>
+          <a href="Basic-Movement-Guide.dc.html" style="font-family:var(--font-serif); font-size:15px; color:var(--text-soft); text-decoration:none;" style-hover="color:#39CCCE">Setup &amp; Guide</a>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:0.7rem;">
+          <div style="font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.14em; font-size:15px; color:#F2A93F; margin-bottom:0.2rem;">Sword Combat</div>
+          <a href="Sword-Combat-Detail.dc.html" style="font-family:var(--font-serif); font-size:15px; color:var(--text-soft); text-decoration:none;" style-hover="color:#39CCCE">Detail</a>
+          <a href="Sword-Combat-Guide.dc.html" style="font-family:var(--font-serif); font-size:15px; color:var(--text-soft); text-decoration:none;" style-hover="color:#39CCCE">Setup &amp; Guide</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  go(id) {
+    const el = document.getElementById(id);
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 72, behavior: 'smooth' });
+  }
+  renderVals() {
+    return {
+      onBrowse: () => this.go('products'),
+      onBuy: () => window.open('https://www.fab.com', '_blank'),
+      onDemo: () => window.open('https://www.youtube.com/@RobinPG', '_blank'),
+      products: [
+        {
+          name: 'Basic Movement Female',
+          theme: 'teal',
+          tagline: 'Complete female locomotion — walk, run, crouch, jump, roll, pivot and mantle, ready to retarget.',
+          iconStyle: { width: '44px', height: '44px', flex: 'none', backgroundImage: 'url(assets/icons/stand-up.png)', backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' },
+          status: 'Available now',
+          statusTone: 'teal',
+          previewLabel: 'In-engine locomotion',
+          stats: [{ n: '269', u: 'UE5 anims' }, { n: '67', u: 'UE4 anims' }, { n: '25', u: 'Poses' }],
+          detail: 'Basic-Movement-Detail.dc.html',
+          cover: 'assets/basic-movement-cover.png',
+          blueprint: 'Basic-Movement-Guide.dc.html',
+          blueprintLabel: 'Setup & Guide →',
+        },
+        {
+          name: 'Sword Combat',
+          theme: 'ember',
+          tagline: 'Melee combat — light and heavy attacks, combo strings, blocks, parries and finishers, with player and enemy blueprints.',
+          iconStyle: { width: '44px', height: '44px', flex: 'none', backgroundImage: 'url(assets/icons/gamepad.png)', backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' },
+          status: 'New',
+          statusTone: 'teal',
+          previewLabel: 'In-engine combat',
+          stats: [{ n: '903', u: 'Total files' }, { n: '436', u: 'Normal' }, { n: '467', u: 'Combat' }],
+          detail: 'Sword-Combat-Detail.dc.html',
+          cover: 'assets/sword-combat-cover.png',
+          blueprint: 'Sword-Combat-Guide.dc.html',
+          blueprintLabel: 'Setup & Guide →',
+        },
+      ],
+      news: [
+        { date: '10/07/25', body: 'Basic movement female Blueprint Update Bug Fix in Mantle System.' },
+        { date: '15/01/25', body: 'Basic movement female Update New animation : 6 More secondary motion, Landing new version' },
+        { date: '28/11/24', body: 'Basic movement female Update New animation : 10 direction locomotion, 3 direction rolling' },
+        { date: '29/10/24', body: 'Basic movement female Update New animation : Locomotion StartL-R / Loop / StopL-R / PivotL-R' },
+        { date: '08/06/24', body: 'Release basic movement female on Unreal marketplace' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+/* ──────────────────────────────────────────────────────────
+   RobinPG · Color tokens
+   Brand teal sampled from the Robin logo: #39CCCE
+   Identity: an Unreal Engine "viewport" — dark teal-ink
+   surfaces lit by a single robin-teal glow, warmed by a
+   bone-paper text tone that pairs with the Vollkorn serif.
+   ────────────────────────────────────────────────────────── */
+:root {
+  /* ── Robin Teal (primary) ── */
+  --teal-50:  #ECFCFC;
+  --teal-100: #CCF6F6;
+  --teal-200: #9DECED;
+  --teal-300: #6FDFE1;
+  --teal-400: #4DD2D4;
+  --teal-500: #39CCCE;   /* brand mark */
+  --teal-600: #25A9AB;
+  --teal-700: #1C8688;
+  --teal-800: #18696B;
+  --teal-900: #154F51;
+  --teal-950: #0C3032;
+
+  /* ── Ember (secondary accent — HUD highlight, use sparingly) ── */
+  --ember-300: #FBD9A0;
+  --ember-400: #F6C272;
+  --ember-500: #F2A93F;   /* warning / "buy" energy */
+  --ember-600: #D98A26;
+
+  /* ── Signal colors ── */
+  --signal-success: #4FC78A;
+  --signal-danger:  #F0645B;
+  --signal-info:    var(--teal-400);
+
+  /* ── Ink — teal-tinted charcoals (dark "viewport" surfaces) ── */
+  --ink-950: #070D0D;
+  --ink-900: #0A1314;   /* app background */
+  --ink-850: #0E1A1B;
+  --ink-800: #122324;   /* raised surface */
+  --ink-700: #18302F;   /* card / panel */
+  --ink-600: #21403F;   /* hover surface */
+  --ink-500: #2C5251;   /* hairline-on-dark / strong border */
+
+  /* ── Bone — warm off-whites (text + light surfaces) ── */
+  --bone-50:  #FBF9F3;   /* lightest paper */
+  --bone-100: #F6F2E8;
+  --bone-200: #ECE6D6;
+  --bone-300: #DCD4BF;
+  --bone-400: #B7B3A2;
+  --bone-500: #8C9491;   /* muted on dark */
+  --bone-600: #6A7370;
+
+  /* ── RAW alpha helpers ── */
+  --teal-glow: rgba(57, 204, 206, 0.18);
+  --teal-veil: rgba(57, 204, 206, 0.10);
+  --ink-veil:  rgba(7, 13, 13, 0.72);
+  --white-08:  rgba(246, 242, 232, 0.08);
+  --white-14:  rgba(246, 242, 232, 0.14);
+
+  /* ───────────────── Semantic aliases (DARK is default) ───────── */
+  --bg:            var(--ink-900);
+  --surface-app:   var(--ink-900);
+  --surface-sunk:  var(--ink-950);
+  --surface-raised:var(--ink-800);
+  --surface-card:  var(--ink-700);
+  --surface-hover: var(--ink-600);
+
+  --border:        var(--ink-500);
+  --border-soft:   var(--white-08);
+  --border-strong: var(--teal-700);
+
+  --text-strong:   var(--bone-50);
+  --text:          var(--bone-200);
+  --text-soft:     var(--bone-400);
+  --text-muted:    var(--bone-500);
+  --text-inverse:  var(--ink-900);
+
+  --accent:        var(--teal-500);
+  --accent-hover:  var(--teal-400);
+  --accent-press:  var(--teal-600);
+  --accent-quiet:  var(--teal-veil);
+  --on-accent:     var(--ink-950);
+
+  --focus-ring:    var(--teal-400);
+}
+
+/* ───────────────── Light "paper" scope ─────────────────────────
+   Apply class="paper" (or data-theme="paper") to opt a region into
+   the warm light surface — docs, print, editorial layouts.        */
+.paper,
+[data-theme="paper"] {
+  --bg:            var(--bone-50);
+  --surface-app:   var(--bone-50);
+  --surface-sunk:  var(--bone-100);
+  --surface-raised:#FFFFFF;
+  --surface-card:  #FFFFFF;
+  --surface-hover: var(--bone-100);
+
+  --border:        var(--bone-300);
+  --border-soft:   var(--bone-200);
+  --border-strong: var(--teal-600);
+
+  --text-strong:   #0E1A1B;
+  --text:          #1C2C2B;
+  --text-soft:     #4A5654;
+  --text-muted:    #76817E;
+  --text-inverse:  var(--bone-50);
+
+  --accent:        var(--teal-700);
+  --accent-hover:  var(--teal-600);
+  --accent-press:  var(--teal-800);
+  --accent-quiet:  var(--teal-50);
+  --on-accent:     var(--bone-50);
+
+  --focus-ring:    var(--teal-600);
+}

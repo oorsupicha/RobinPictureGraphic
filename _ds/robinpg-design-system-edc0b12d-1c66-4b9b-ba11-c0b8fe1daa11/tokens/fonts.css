@@ -1,0 +1,81 @@
+/* ──────────────────────────────────────────────────────────
+   RobinPG · @font-face declarations
+   Coolvetica  → display / UI labels (gaming energy, condensed)
+   Vollkorn    → body / editorial serif (warm, readable)
+   ────────────────────────────────────────────────────────── */
+
+/* ── Coolvetica (display) ── */
+@font-face {
+  font-family: 'Coolvetica';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/coolvetica-rg.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Coolvetica';
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url('../assets/fonts/coolvetica-rg-it.otf') format('opentype');
+}
+/* Condensed cut — used for tighter headlines & eyebrows */
+@font-face {
+  font-family: 'Coolvetica Condensed';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/coolvetica-condensed-rg.otf') format('opentype');
+}
+/* Crammed — ultra-tight, decorative only */
+@font-face {
+  font-family: 'Coolvetica Crammed';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/coolvetica-crammed-rg.otf') format('opentype');
+}
+
+/* ── Vollkorn (serif body) ── */
+@font-face {
+  font-family: 'Vollkorn';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/vollkorn-regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Vollkorn';
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url('../assets/fonts/vollkorn-italic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Vollkorn';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/vollkorn-medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Vollkorn';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/vollkorn-semibold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Vollkorn';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/vollkorn-bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Vollkorn';
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  src: url('../assets/fonts/vollkorn-black.ttf') format('truetype');
+}
