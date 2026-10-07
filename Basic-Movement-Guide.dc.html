@@ -49,13 +49,13 @@
         <span style="font-family:var(--font-display); text-transform:uppercase; letter-spacing:0.06em; font-size:18px; color:var(--accent);">1 · Main ALS blueprint</span>
         <span style="font-family:var(--font-display); font-size:20px; color:var(--text-strong);">Advanced Locomotion System V4 →</span>
         <span style="font-family:var(--font-serif); font-size:15.5px; line-height:1.6; color:var(--text-soft);">Free on the Unreal Marketplace (FAB). This is the base our set extends.</span>
-        <img src="assets/guide/need-als.png" alt="" style="display:block; width:100%; margin-top:0.4rem; border:1px solid var(--border); border-radius:var(--radius-sm);">
+        <img src="assets/Basicmove-guide/need-als.png" alt="" style="display:block; width:100%; margin-top:0.4rem; border:1px solid var(--border); border-radius:var(--radius-sm);">
       </a>
       <a href="https://drive.google.com/file/d/17En96oKDUSNlccwvqcVCbVcNmENE4n9L/view?usp=sharing" target="_blank" rel="noopener" style="text-decoration:none; background:var(--surface-card); padding:1.7rem 1.9rem; display:flex; flex-direction:column; gap:0.5rem; transition:background .2s;" style-hover="background:var(--surface-hover)">
         <span style="font-family:var(--font-display); text-transform:uppercase; letter-spacing:0.06em; font-size:18px; color:var(--accent);">2 · Child ALS blueprint</span>
         <span style="font-family:var(--font-display); font-size:20px; color:var(--text-strong);">RPG_BasicMove_Blueprint →</span>
         <span style="font-family:var(--font-serif); font-size:15.5px; line-height:1.6; color:var(--text-soft);">Our "RPG_BasicMove_BP" folder — Character, Animation &amp; Retarget blueprints, plus the input keys.</span>
-        <img src="assets/guide/need-rpg.png" alt="" style="display:block; width:100%; margin-top:0.4rem; border:1px solid var(--border); border-radius:var(--radius-sm);">
+        <img src="assets/Basicmove-guide/need-rpg.png" alt="" style="display:block; width:100%; margin-top:0.4rem; border:1px solid var(--border); border-radius:var(--radius-sm);">
       </a>
     </div>
   </section>
@@ -107,7 +107,7 @@
     <div style="margin-bottom:1.4rem; display:inline-flex; align-items:center; gap:0.75rem; font-family:var(--font-display); text-transform:uppercase; letter-spacing:0.08em; font-size:18px; color:var(--accent);">Tip &amp; trick<span style="width:40px; height:1px; background:var(--border);"></span></div>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:1.4rem;">
       <x-import component-from-global-scope="RobinPGDesignSystem_edc0b1.Callout" tone="warning" title="Problem" hint-size="100%,120px">The camera jiggles while the character is falling near a platform or ledge.</x-import>
-      <x-import component-from-global-scope="RobinPGDesignSystem_edc0b1.Callout" tone="tip" title="Solution" hint-size="100%,120px">Add a camera socket on the character's head skeleton:<ul style="list-style:none; margin:0.6rem 0 0; padding:0; display:flex; flex-direction:column; gap:0.35rem;"><li style="display:flex; gap:0.6rem;"><span style="color:var(--accent);">▸</span><span>FP_Camera</span></li><li style="display:flex; gap:0.6rem;"><span style="color:var(--accent);">▸</span><span>TP_CameraTrace_R</span></li><li style="display:flex; gap:0.6rem;"><span style="color:var(--accent);">▸</span><span>TP_CameraTrace_L</span></li></ul><img src="assets/guide/tip-camera.png" alt="" style="display:block; width:100%; max-width:280px; margin-top:0.8rem; border:1px solid var(--border); border-radius:var(--radius-sm);"></x-import>
+      <x-import component-from-global-scope="RobinPGDesignSystem_edc0b1.Callout" tone="tip" title="Solution" hint-size="100%,120px">Add a camera socket on the character's head skeleton:<ul style="list-style:none; margin:0.6rem 0 0; padding:0; display:flex; flex-direction:column; gap:0.35rem;"><li style="display:flex; gap:0.6rem;"><span style="color:var(--accent);">▸</span><span>FP_Camera</span></li><li style="display:flex; gap:0.6rem;"><span style="color:var(--accent);">▸</span><span>TP_CameraTrace_R</span></li><li style="display:flex; gap:0.6rem;"><span style="color:var(--accent);">▸</span><span>TP_CameraTrace_L</span></li></ul><img src="assets/Basicmove-guide/tip-camera.png" alt="" style="display:block; width:100%; max-width:280px; margin-top:0.8rem; border:1px solid var(--border); border-radius:var(--radius-sm);"></x-import>
     </div>
   </section>
 
@@ -127,7 +127,7 @@
     <div style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:space-between; align-items:flex-start; border-top:1px solid var(--border); padding-top:2.5rem; padding-bottom:2rem;">
       <div style="max-width:440px; display:flex; flex-direction:column; gap:1.15rem;">
         <div style="display:flex; align-items:center; gap:0.7rem;">
-          <img src="assets/logo_RPG.png" alt="RobinPG" style="width:32px; height:32px; object-fit:contain;">
+          <img src="assets/brand/logo_RPG.png" alt="RobinPG" style="width:32px; height:32px; object-fit:contain;">
           <span style="font-family:var(--font-display); font-size:20px; color:var(--text-strong);">RobinPictureGraphic</span>
         </div>
         <div style="font-family:var(--font-display); font-size:1.25rem; color:#39CCCE; margin-top:0.2rem;">Contact us : <a href="mailto:robinpicturegraphic@gmail.com" style="color:#39CCCE; text-decoration:none; border-bottom:1px solid #1C8688;" style-hover="border-color:#39CCCE">robinpicturegraphic@gmail.com</a></div>
@@ -158,15 +158,15 @@ class Component extends DCLogic {
   renderVals() {
     const mkImg = (src, mt) => src ? React.createElement('img', { src: src, alt: '', style: { display: 'block', width: '100%', maxWidth: '620px', marginTop: mt, border: '1px solid var(--border)', borderRadius: 'var(--radius-md)' } }) : null;
     return {
-      onBuy: () => window.open('https://www.fab.com', '_blank'),
+      onBuy: () => window.open('https://www.fab.com/listings/f903e60f-a637-429e-97ec-33722971b1d1', '_blank'),
       steps: [
-        { n: '1', title: 'Create a new ALS project', body: ['Get Advanced Locomotion System V4 and create a new ALS project to work from.'], shot1: 'assets/guide/step1a.png', shot2: 'assets/guide/step1.png' },
-        { n: '2', title: 'Migrate the GameMode', body: ['Open the ALS project and migrate "ALS_GameMode_SP" into your project\'s Content folder.'], shot1: 'assets/guide/step2.png' },
-        { n: '3', title: 'Import the RPG folder', body: ['Hard-import our "RPG_BasicMove_BP" folder into your project\'s Content folder.', 'Now your Content folder must contain these three folders:'], bullets: ['AdvancedLocomotionV4', 'RPG_BasicMove', 'RPG_BasicMove_BP'], shot1: 'assets/guide/step3.png' },
-        { n: '4', title: 'Import the input keys', body: ['Open your project.', 'In Edit → Project Settings → Engine · Input → Import (top right).', 'Import the "Input_ALS" file we provide.'], shot1: 'assets/guide/step4.png' },
-        { n: '5', title: 'Add the overlay states', body: ['Open the "ALS_OverlayState" enumerator and add three new entries:'], bullets: ['Normal_A', 'Normal_B', 'Normal_C'], shot1: 'assets/guide/step5a.png', shot2: 'assets/guide/step5.png' },
-        { n: '6', title: 'Compile & verify', body: ['Compile the RPG blueprint to check for errors.', 'In BP_RPG_FemaleUE5_CH, confirm the "Switch on ALS_OverlayState" node is connected to the three new enumerators.'], shot1: 'assets/guide/step6.png' },
-        { n: '7', title: 'Set the GameMode & play', body: ['Set GameMode in World Settings.'], gamemode: true, shot1: 'assets/guide/step7.png' },
+        { n: '1', title: 'Create a new ALS project', body: ['Get Advanced Locomotion System V4 and create a new ALS project to work from.'], shot1: 'assets/Basicmove-guide/step1a.png', shot2: 'assets/Basicmove-guide/step1.png' },
+        { n: '2', title: 'Migrate the GameMode', body: ['Open the ALS project and migrate "ALS_GameMode_SP" into your project\'s Content folder.'], shot1: 'assets/Basicmove-guide/step2.png' },
+        { n: '3', title: 'Import the RPG folder', body: ['Hard-import our "RPG_BasicMove_BP" folder into your project\'s Content folder.', 'Now your Content folder must contain these three folders:'], bullets: ['AdvancedLocomotionV4', 'RPG_BasicMove', 'RPG_BasicMove_BP'], shot1: 'assets/Basicmove-guide/step3.png' },
+        { n: '4', title: 'Import the input keys', body: ['Open your project.', 'In Edit → Project Settings → Engine · Input → Import (top right).', 'Import the "Input_ALS" file we provide.'], shot1: 'assets/Basicmove-guide/step4.png' },
+        { n: '5', title: 'Add the overlay states', body: ['Open the "ALS_OverlayState" enumerator and add three new entries:'], bullets: ['Normal_A', 'Normal_B', 'Normal_C'], shot1: 'assets/Basicmove-guide/step5a.png', shot2: 'assets/Basicmove-guide/step5.png' },
+        { n: '6', title: 'Compile & verify', body: ['Compile the RPG blueprint to check for errors.', 'In BP_RPG_FemaleUE5_CH, confirm the "Switch on ALS_OverlayState" node is connected to the three new enumerators.'], shot1: 'assets/Basicmove-guide/step6.png' },
+        { n: '7', title: 'Set the GameMode & play', body: ['Set GameMode in World Settings.'], gamemode: true, shot1: 'assets/Basicmove-guide/step7.png' },
       ].map(function(s){ return Object.assign({}, s, { shot1El: mkImg(s.shot1, '1rem'), shot2El: mkImg(s.shot2, '0.8rem') }); }),
     };
   }

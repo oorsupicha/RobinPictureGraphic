@@ -41,7 +41,7 @@
   <section style="position:relative; padding:clamp(2rem,6vw,4.5rem) clamp(1.25rem,4vw,2rem) 4rem; overflow:hidden;">
     <div style="position:absolute; top:-10%; right:-5%; width:760px; height:620px; max-width:80vw; background:radial-gradient(ellipse, var(--teal-glow) 0%, transparent 70%); pointer-events:none;"></div>
     <div style="position:relative; max-width:var(--container-wide); margin:0 auto; width:100%; display:flex; flex-direction:row-reverse; flex-wrap:wrap; gap:2rem 3.5rem; align-items:center;">
-      <img src="assets/sword-combat-cover.png" alt="Sword Combat Female — cover" style="display:block; flex:1 1 380px; min-width:0; width:100%; aspect-ratio:16/9; object-fit:cover; border:1px solid var(--border); border-radius:var(--radius-md); box-shadow:var(--glow-soft);">
+      <img src="assets/covers/sword-combat-cover.png" alt="Sword Combat Female — cover" style="display:block; flex:1 1 380px; min-width:0; width:100%; aspect-ratio:16/9; object-fit:cover; border:1px solid var(--border); border-radius:var(--radius-md); box-shadow:var(--glow-soft);">
       <div style="flex:1.05 1 420px; min-width:0; display:flex; flex-direction:column; align-items:flex-start; gap:1.3rem;">
         <x-import component-from-global-scope="RobinPGDesignSystem_edc0b1.Badge" tone="ember" dot="{{ true }}" pulse="{{ true }}" hint-size="auto,28px">Available now · UE 5.2</x-import>
         <h1 style="font-family:var(--font-display); font-weight:400; font-size:clamp(2.6rem,5vw,4.2rem); line-height:1.0; letter-spacing:-0.025em; color:var(--text-strong); margin:0;">Sword <span style="font-style:italic; color:var(--accent);">Combat</span></h1>
@@ -201,7 +201,7 @@
     <div style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:space-between; align-items:flex-start; border-top:1px solid var(--border); padding-top:2.5rem; padding-bottom:2rem;">
       <div style="max-width:440px; display:flex; flex-direction:column; gap:1.15rem;">
         <div style="display:flex; align-items:center; gap:0.7rem;">
-          <img src="assets/logo_RPG.png" alt="RobinPG" style="width:32px; height:32px; object-fit:contain;">
+          <img src="assets/brand/logo_RPG.png" alt="RobinPG" style="width:32px; height:32px; object-fit:contain;">
           <span style="font-family:var(--font-display); font-size:20px; color:var(--text-strong);">RobinPictureGraphic</span>
         </div>
         <div style="font-family:var(--font-display); font-size:1.25rem; color:#39CCCE; margin-top:0.2rem;">Contact us : <a href="mailto:robinpicturegraphic@gmail.com" style="color:#39CCCE; text-decoration:none; border-bottom:1px solid #1C8688;" style-hover="border-color:#39CCCE">robinpicturegraphic@gmail.com</a></div>
@@ -231,15 +231,15 @@
 class Component extends DCLogic {
   state = { slide: 0 };
   slides = [
-    { label: 'Package', src: 'assets/sword-summary/01_Package.png' },
-    { label: 'Free demo', src: 'assets/sword-summary/02_FreeDemo.png' },
-    { label: 'Idle state', src: 'assets/sword-summary/03_Idle.png' },
-    { label: 'Locomotion', src: 'assets/sword-summary/04_Locomotion.png' },
-    { label: 'Jump / In air', src: 'assets/sword-summary/05_Jump.png' },
-    { label: 'Attack', src: 'assets/sword-summary/06_Attack.png' },
-    { label: 'Damage', src: 'assets/sword-summary/07_Damage.png' },
-    { label: 'Action', src: 'assets/sword-summary/08_Action.png' },
-    { label: 'Blend state', src: 'assets/sword-summary/09_BlendState.png' },
+    { label: 'Package', src: 'assets/swcombat-summary/01_Package.png' },
+    { label: 'Free demo', src: 'assets/swcombat-summary/02_FreeDemo.png' },
+    { label: 'Idle state', src: 'assets/swcombat-summary/03_Idle.png' },
+    { label: 'Locomotion', src: 'assets/swcombat-summary/04_Locomotion.png' },
+    { label: 'Jump / In air', src: 'assets/swcombat-summary/05_Jump.png' },
+    { label: 'Attack', src: 'assets/swcombat-summary/06_Attack.png' },
+    { label: 'Damage', src: 'assets/swcombat-summary/07_Damage.png' },
+    { label: 'Action', src: 'assets/swcombat-summary/08_Action.png' },
+    { label: 'Blend state', src: 'assets/swcombat-summary/09_BlendState.png' },
   ];
   goSlide(i) { const n = this.slides.length; this.setState({ slide: (i + n) % n }); }
   next() { this.goSlide(this.state.slide + 1); }
@@ -274,8 +274,8 @@ class Component extends DCLogic {
       { name: 'Locomotion Pose', n: '20', clips: ['Extra pose'] },
     ];
     return {
-      onBuy: () => window.open('https://www.fab.com', '_blank'),
-      onDemo: () => window.open('https://www.youtube.com/@RobinPG', '_blank'),
+      onBuy: () => window.open('https://www.fab.com/listings/f903e60f-a637-429e-97ec-33722971b1d1', '_blank'), // placeholder — Sword Combat FAB link TBD
+      onDemo: () => window.open('https://github.com/oorsupicha/RPG_BasicMove_Demo/releases/tag/V4_b', '_blank'), // placeholder — Sword Combat demo link TBD
       onPreview: () => this.go('preview'),
       animListLeft: animList.slice(0, 11),
       animListRight: animList.slice(11),

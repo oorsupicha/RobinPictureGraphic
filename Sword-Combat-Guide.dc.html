@@ -67,7 +67,7 @@
     <div style="margin-bottom:1.4rem; display:inline-flex; align-items:center; gap:0.75rem; font-family:var(--font-display); text-transform:uppercase; letter-spacing:0.08em; font-size:26px; color:var(--accent);">How to Install the BP in Your Project</div>
     <div>
       <div style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span>In World Settings, set GameMode to <code style="font-family:var(--font-mono,ui-monospace,monospace); font-size:15.5px; color:var(--accent); background:var(--accent-quiet); border:1px solid var(--border-strong); border-radius:3px; padding:0.1rem 0.4rem;">BP_Gamemode</code>.</span></div>
-      <button type="button" onClick="{{ z1 }}" style="{{ shotBtn }}"><img src="assets/swcombat-faq/01_WorldSettings_GameMode.png" alt="World Settings — GameMode set to BP_Gamemode" style="display:block; width:100%; height:auto;"></button>
+      <button type="button" onClick="{{ z1 }}" style="{{ shotBtn }}"><img src="assets/swcombat-guide/01_WorldSettings_GameMode.png" alt="World Settings — GameMode set to BP_Gamemode" style="display:block; width:100%; height:auto;"></button>
       <div style="font-family:var(--font-serif); font-size:15px; color:var(--text-muted); margin-top:0.6rem;">World Settings — GameMode set to BP_Gamemode. Click to enlarge.</div>
     </div>
   </section>
@@ -80,11 +80,11 @@
     <ul style="list-style:none; margin:0 0 1.8rem; padding:0 0 0 0.2rem; display:flex; flex-direction:column; gap:0.5rem;"><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span><strong style="font-family:var(--font-display); font-weight:400; color:var(--text-strong);">Visual bones and sockets:</strong> For attaching the weapon to the character.</span></li><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span><strong style="font-family:var(--font-display); font-weight:400; color:var(--text-strong);">Blend Mask:</strong> Used in the <code style="font-family:var(--font-mono,ui-monospace,monospace); font-size:15.5px; color:var(--accent);">ABP_Base</code> AnimGraph (Layered Blend per Bone node).</span></li><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span><strong style="font-family:var(--font-display); font-weight:400; color:var(--text-strong);">Animation Slot:</strong> Used in the <code style="font-family:var(--font-mono,ui-monospace,monospace); font-size:15.5px; color:var(--accent);">ABP_Base</code> AnimGraph and in Animation Montages.</span></li></ul>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:1.4rem; align-items:start;">
       <div>
-        <button type="button" onClick="{{ z2 }}" style="{{ shotBtn }}"><img src="assets/swcombat-faq/02_SwCombat_Character.png" alt="SwCombat character skeleton" style="display:block; width:100%; height:auto;"></button>
+        <button type="button" onClick="{{ z2 }}" style="{{ shotBtn }}"><img src="assets/swcombat-guide/02_SwCombat_Character.png" alt="SwCombat character skeleton" style="display:block; width:100%; height:auto;"></button>
         <div style="font-family:var(--font-serif); font-size:15px; color:var(--text-muted); margin-top:0.6rem;">SwCombat character skeleton. Click to enlarge.</div>
       </div>
       <div>
-        <button type="button" onClick="{{ z3 }}" style="{{ shotBtn }}"><img src="assets/swcombat-faq/03_Original_Character.png" alt="Original demo character skeleton" style="display:block; width:100%; height:auto;"></button>
+        <button type="button" onClick="{{ z3 }}" style="{{ shotBtn }}"><img src="assets/swcombat-guide/03_Original_Character.png" alt="Original demo character skeleton" style="display:block; width:100%; height:auto;"></button>
         <div style="font-family:var(--font-serif); font-size:15px; color:var(--text-muted); margin-top:0.6rem;">Original demo character skeleton. Click to enlarge.</div>
       </div>
     </div>
@@ -105,7 +105,7 @@
     <ul style="list-style:none; margin:0.5rem 0 0; padding:0 0 0 1.9rem; display:flex; flex-direction:column; gap:0.5rem;"><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span><code style="font-family:var(--font-mono,ui-monospace,monospace); font-size:15.5px; color:var(--text-strong);">ABP_Normal</code> — the unequipped animation set</span></li><li style="display:flex; gap:0.7rem; font-family:var(--font-serif); font-size:16.5px; line-height:1.65; color:var(--text-soft);"><span style="color:var(--accent); flex:none;">▸</span><span><code style="font-family:var(--font-mono,ui-monospace,monospace); font-size:15.5px; color:var(--text-strong);">ABP_SwCombat</code> — the sword-equipped animation set</span></li></ul>
     <p style="font-family:var(--font-serif); font-size:16.5px; line-height:1.7; color:var(--text-soft); margin:1.8rem 0 0;"><strong style="font-family:var(--font-display); font-weight:400; color:var(--text-strong);">How they connect:</strong> the Character BP sets the state, the AnimBP turns that state into a pose, and Anim Layers let you swap parts of that pose logic.</p>
     <div style="margin-top:1.6rem;">
-      <button type="button" onClick="{{ z4 }}" style="{{ shotBtn }}"><img src="assets/swcombat-faq/04_Replace_Animations.png" alt="Replacing animations in the Anim Layer child blueprints" style="display:block; width:100%; height:auto;"></button>
+      <button type="button" onClick="{{ z4 }}" style="{{ shotBtn }}"><img src="assets/swcombat-guide/04_Replace_Animations.png" alt="Replacing animations in the Anim Layer child blueprints" style="display:block; width:100%; height:auto;"></button>
       <div style="font-family:var(--font-serif); font-size:15px; color:var(--text-muted); margin-top:0.6rem;">Replacing animations in the Anim Layer child blueprints. Click to enlarge.</div>
     </div>
   </section>
@@ -124,7 +124,7 @@
       <div style="font-family:var(--font-display); font-size:20px; color:var(--text-strong); margin:1.6rem 0 0.5rem;">Heal Amount</div><p style="font-family:var(--font-serif); font-size:16.5px; line-height:1.7; color:var(--text-soft); margin:0;">The amount the enemy's HP will increase by after it drops below 25%.</p>
     </div>
     <div>
-      <button type="button" onClick="{{ z5 }}" style="{{ shotBtn }}"><img src="assets/swcombat-faq/05_Enemy_Status.png" alt="Enemy Character Status settings" style="display:block; width:100%; height:auto;"></button>
+      <button type="button" onClick="{{ z5 }}" style="{{ shotBtn }}"><img src="assets/swcombat-guide/05_Enemy_Status.png" alt="Enemy Character Status settings" style="display:block; width:100%; height:auto;"></button>
       <div style="font-family:var(--font-serif); font-size:15px; color:var(--text-muted); margin-top:0.6rem;">Enemy Character Status settings. Click to enlarge.</div>
     </div>
   </section>
@@ -144,7 +144,7 @@
     <div style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:space-between; align-items:flex-start; border-top:1px solid var(--border); padding-top:2.5rem; padding-bottom:2rem;">
       <div style="max-width:440px; display:flex; flex-direction:column; gap:1.15rem;">
         <div style="display:flex; align-items:center; gap:0.7rem;">
-          <img src="assets/logo_RPG.png" alt="RobinPG" style="width:32px; height:32px; object-fit:contain;">
+          <img src="assets/brand/logo_RPG.png" alt="RobinPG" style="width:32px; height:32px; object-fit:contain;">
           <span style="font-family:var(--font-display); font-size:20px; color:var(--text-strong);">RobinPictureGraphic</span>
         </div>
         <div style="font-family:var(--font-display); font-size:1.25rem; color:#39CCCE; margin-top:0.2rem;">Contact us : <a href="mailto:robinpicturegraphic@gmail.com" style="color:#39CCCE; text-decoration:none; border-bottom:1px solid #1C8688;" style-hover="border-color:#39CCCE">robinpicturegraphic@gmail.com</a></div>
@@ -189,7 +189,7 @@ class Component extends DCLogic {
 
   renderVals() {
     const open = (src) => () => this.setState({ zoom: src });
-    const base = 'assets/swcombat-faq/';
+    const base = 'assets/swcombat-guide/';
     return {
       shotBtn: {
         display: 'block', width: '100%', marginTop: '1rem', padding: 0,

@@ -31,7 +31,7 @@
   <section style="position:relative; padding:clamp(2rem,6vw,4.5rem) clamp(1.25rem,4vw,2rem) 4rem; overflow:hidden;">
     <div style="position:absolute; top:-10%; right:-5%; width:760px; height:620px; max-width:80vw; background:radial-gradient(ellipse, var(--teal-glow) 0%, transparent 70%); pointer-events:none;"></div>
     <div style="position:relative; max-width:var(--container-wide); margin:0 auto; width:100%; display:flex; flex-direction:row-reverse; flex-wrap:wrap; gap:2rem 3.5rem; align-items:center;">
-      <img src="assets/basic-movement-cover.png" alt="Basic Movement Female" style="display:block; flex:1 1 380px; min-width:0; width:100%; aspect-ratio:16/9; object-fit:cover; border:1px solid var(--border); border-radius:var(--radius-md); box-shadow:var(--glow-soft);">
+      <img src="assets/covers/basic-movement-cover.png" alt="Basic Movement Female" style="display:block; flex:1 1 380px; min-width:0; width:100%; aspect-ratio:16/9; object-fit:cover; border:1px solid var(--border); border-radius:var(--radius-md); box-shadow:var(--glow-soft);">
       <div style="flex:1.05 1 420px; min-width:0; display:flex; flex-direction:column; align-items:flex-start; gap:1.3rem;">
         <x-import component-from-global-scope="RobinPGDesignSystem_edc0b1.Badge" tone="teal" dot="{{ true }}" pulse="{{ true }}" hint-size="auto,28px">Available now · ALS v4</x-import>
         <h1 style="font-family:var(--font-display); font-weight:400; font-size:clamp(2.6rem,5vw,4.2rem); line-height:1.0; letter-spacing:-0.025em; color:var(--text-strong); margin:0;">Basic Movement <span style="font-style:italic; color:var(--accent);">Female</span></h1>
@@ -83,11 +83,11 @@
       <div style="font-family:var(--font-condensed); text-transform:uppercase; letter-spacing:0.16em; font-size:15px; color:var(--text-muted); margin-bottom:0.7rem;">Animation summary</div>
       <!-- slideshow stage -->
       <div onMouseEnter="{{ pauseShow }}" onMouseLeave="{{ resumeShow }}" style="position:relative; aspect-ratio:16/9; border:1px solid var(--border); border-radius:var(--radius-md); overflow:hidden; background:var(--ink-850); box-shadow:var(--glow-soft);">
-        <img src="assets/00_Sum01.png" alt="Locomotion" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:{{ disp0 }};">
-        <img src="assets/00_Sum02.png" alt="Jump / In-air" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:{{ disp1 }};">
-        <img src="assets/00_Sum03.png" alt="Action — turn / roll / get up" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:{{ disp2 }};">
-        <img src="assets/00_Sum04.png" alt="Action — mantle / transition" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:{{ disp3 }};">
-        <img src="assets/00_Sum05.png" alt="Overlay pose" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:{{ disp4 }};">
+        <img src="assets/basicmove-summary/00_Sum01.png" alt="Locomotion" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:{{ disp0 }};">
+        <img src="assets/basicmove-summary/00_Sum02.png" alt="Jump / In-air" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:{{ disp1 }};">
+        <img src="assets/basicmove-summary/00_Sum03.png" alt="Action — turn / roll / get up" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:{{ disp2 }};">
+        <img src="assets/basicmove-summary/00_Sum04.png" alt="Action — mantle / transition" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:{{ disp3 }};">
+        <img src="assets/basicmove-summary/00_Sum05.png" alt="Overlay pose" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:{{ disp4 }};">
         <div style="position:absolute; bottom:0.8rem; right:1rem; pointer-events:none; font-family:var(--font-mono); font-size:13px; color:var(--text-strong); background:rgba(10,19,20,0.55); padding:0.15rem 0.5rem; border-radius:2px;">{{ counterText }}</div>
         <button onClick="{{ onPrev }}" aria-label="Previous" style="position:absolute; top:50%; left:0.8rem; transform:translateY(-50%); width:42px; height:42px; display:flex; align-items:center; justify-content:center; border:1px solid var(--border-strong); border-radius:50%; background:rgba(10,19,20,0.6); backdrop-filter:blur(8px); color:var(--accent); font-size:16px; cursor:pointer;" style-hover="background:rgba(10,19,20,0.85); border-color:var(--accent);">◄</button>
         <button onClick="{{ onNext }}" aria-label="Next" style="position:absolute; top:50%; right:0.8rem; transform:translateY(-50%); width:42px; height:42px; display:flex; align-items:center; justify-content:center; border:1px solid var(--border-strong); border-radius:50%; background:rgba(10,19,20,0.6); backdrop-filter:blur(8px); color:var(--accent); font-size:16px; cursor:pointer;" style-hover="background:rgba(10,19,20,0.85); border-color:var(--accent);">►</button>
@@ -95,19 +95,19 @@
       <!-- thumbnail rail -->
       <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(96px,1fr)); gap:0.5rem; margin-top:0.6rem;">
         <button onClick="{{ thumbs.0.select }}" aria-label="Locomotion" style="display:block; padding:0; border:none; background:none; min-width:0; cursor:pointer; border-radius:3px; overflow:hidden; line-height:0; outline:{{ thumbs.0.outline }}; outline-offset:-2px; opacity:{{ thumbs.0.opacity }}; transition:opacity 160ms var(--ease-out);">
-          <img src="assets/00_Sum01.png" alt="Locomotion" style="display:block; width:100%; aspect-ratio:16/9; object-fit:cover; background:var(--ink-850);">
+          <img src="assets/basicmove-summary/00_Sum01.png" alt="Locomotion" style="display:block; width:100%; aspect-ratio:16/9; object-fit:cover; background:var(--ink-850);">
         </button>
         <button onClick="{{ thumbs.1.select }}" aria-label="Jump / In-air" style="display:block; padding:0; border:none; background:none; min-width:0; cursor:pointer; border-radius:3px; overflow:hidden; line-height:0; outline:{{ thumbs.1.outline }}; outline-offset:-2px; opacity:{{ thumbs.1.opacity }}; transition:opacity 160ms var(--ease-out);">
-          <img src="assets/00_Sum02.png" alt="Jump / In-air" style="display:block; width:100%; aspect-ratio:16/9; object-fit:cover; background:var(--ink-850);">
+          <img src="assets/basicmove-summary/00_Sum02.png" alt="Jump / In-air" style="display:block; width:100%; aspect-ratio:16/9; object-fit:cover; background:var(--ink-850);">
         </button>
         <button onClick="{{ thumbs.2.select }}" aria-label="Action — turn / roll / get up" style="display:block; padding:0; border:none; background:none; min-width:0; cursor:pointer; border-radius:3px; overflow:hidden; line-height:0; outline:{{ thumbs.2.outline }}; outline-offset:-2px; opacity:{{ thumbs.2.opacity }}; transition:opacity 160ms var(--ease-out);">
-          <img src="assets/00_Sum03.png" alt="Action — turn / roll / get up" style="display:block; width:100%; aspect-ratio:16/9; object-fit:cover; background:var(--ink-850);">
+          <img src="assets/basicmove-summary/00_Sum03.png" alt="Action — turn / roll / get up" style="display:block; width:100%; aspect-ratio:16/9; object-fit:cover; background:var(--ink-850);">
         </button>
         <button onClick="{{ thumbs.3.select }}" aria-label="Action — mantle / transition" style="display:block; padding:0; border:none; background:none; min-width:0; cursor:pointer; border-radius:3px; overflow:hidden; line-height:0; outline:{{ thumbs.3.outline }}; outline-offset:-2px; opacity:{{ thumbs.3.opacity }}; transition:opacity 160ms var(--ease-out);">
-          <img src="assets/00_Sum04.png" alt="Action — mantle / transition" style="display:block; width:100%; aspect-ratio:16/9; object-fit:cover; background:var(--ink-850);">
+          <img src="assets/basicmove-summary/00_Sum04.png" alt="Action — mantle / transition" style="display:block; width:100%; aspect-ratio:16/9; object-fit:cover; background:var(--ink-850);">
         </button>
         <button onClick="{{ thumbs.4.select }}" aria-label="Overlay pose" style="display:block; padding:0; border:none; background:none; min-width:0; cursor:pointer; border-radius:3px; overflow:hidden; line-height:0; outline:{{ thumbs.4.outline }}; outline-offset:-2px; opacity:{{ thumbs.4.opacity }}; transition:opacity 160ms var(--ease-out);">
-          <img src="assets/00_Sum05.png" alt="Overlay pose" style="display:block; width:100%; aspect-ratio:16/9; object-fit:cover; background:var(--ink-850);">
+          <img src="assets/basicmove-summary/00_Sum05.png" alt="Overlay pose" style="display:block; width:100%; aspect-ratio:16/9; object-fit:cover; background:var(--ink-850);">
         </button>
       </div>
     </div>
@@ -205,7 +205,7 @@
     <div style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:space-between; align-items:flex-start; border-top:1px solid var(--border); padding-top:2.5rem; padding-bottom:2rem;">
       <div style="max-width:440px; display:flex; flex-direction:column; gap:1.15rem;">
         <div style="display:flex; align-items:center; gap:0.7rem;">
-          <img src="assets/logo_RPG.png" alt="RobinPG" style="width:32px; height:32px; object-fit:contain;">
+          <img src="assets/brand/logo_RPG.png" alt="RobinPG" style="width:32px; height:32px; object-fit:contain;">
           <span style="font-family:var(--font-display); font-size:20px; color:var(--text-strong);">RobinPictureGraphic</span>
         </div>
         <div style="font-family:var(--font-display); font-size:1.25rem; color:#39CCCE; margin-top:0.2rem;">Contact us : <a href="mailto:robinpicturegraphic@gmail.com" style="color:#39CCCE; text-decoration:none; border-bottom:1px solid #1C8688;" style-hover="border-color:#39CCCE">robinpicturegraphic@gmail.com</a></div>
@@ -235,11 +235,11 @@
 class Component extends DCLogic {
   state = { slide: 0 };
   slides = [
-    { src: 'assets/00_Sum01.png', label: 'Locomotion' },
-    { src: 'assets/00_Sum02.png', label: 'Jump / In-air' },
-    { src: 'assets/00_Sum03.png', label: 'Action — turn / roll / get up' },
-    { src: 'assets/00_Sum04.png', label: 'Action — mantle / transition' },
-    { src: 'assets/00_Sum05.png', label: 'Overlay pose' },
+    { src: 'assets/basicmove-summary/00_Sum01.png', label: 'Locomotion' },
+    { src: 'assets/basicmove-summary/00_Sum02.png', label: 'Jump / In-air' },
+    { src: 'assets/basicmove-summary/00_Sum03.png', label: 'Action — turn / roll / get up' },
+    { src: 'assets/basicmove-summary/00_Sum04.png', label: 'Action — mantle / transition' },
+    { src: 'assets/basicmove-summary/00_Sum05.png', label: 'Overlay pose' },
   ];
   goSlide(i) { const n = this.slides.length; this.setState({ slide: (i + n) % n }); }
   next() { this.goSlide(this.state.slide + 1); }
@@ -264,8 +264,8 @@ class Component extends DCLogic {
         { name: 'Mantle', n: '3', clips: ['Low mantle (left hand)', 'Low mantle (right hand)', 'High mantle (both hands)'] },
     ];
     return {
-      onBuy: () => window.open('https://www.fab.com', '_blank'),
-      onDemo: () => window.open('https://www.youtube.com/@RobinPG', '_blank'),
+      onBuy: () => window.open('https://www.fab.com/listings/f903e60f-a637-429e-97ec-33722971b1d1', '_blank'),
+      onDemo: () => window.open('https://github.com/oorsupicha/RPG_BasicMove_Demo/releases/tag/V4_b', '_blank'),
       onPreview: () => this.go('preview'),
       onBlueprint: () => { window.location.href = 'Basic-Movement-Guide.dc.html'; },
       animListLeft: animList.slice(0, 5),
